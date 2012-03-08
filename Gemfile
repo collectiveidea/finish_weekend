@@ -11,3 +11,12 @@ group :assets do
 end
 
 gem "jquery-rails", "~> 2.0.1"
+
+group :development, :test do
+  gem "cucumber-rails", "~> 1.3", require: false
+  gem "database_cleaner", "~> 0.7"
+  gem "factory_girl_rails", "~> 1.7"
+  gem "faker", "~> 1.0"
+  gem "pry", "~> 0.9"
+  gem "rspec-rails", "~> 2.8"
+end
