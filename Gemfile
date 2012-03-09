@@ -11,6 +11,7 @@ group :assets do
 end
 
 gem "jquery-rails", "~> 2.0.1"
+gem "stripe", "~> 1.6.2"
 
 group :development, :test do
   gem "cucumber-rails", "~> 1.3", require: false
