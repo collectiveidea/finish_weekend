@@ -14,3 +14,5 @@ en:
         dietary_needs: Dietary Needs
   credit_card_number: Credit Card Number
   credit_card_code: CVC
+  flash:
+    registration_created: Thank you!
