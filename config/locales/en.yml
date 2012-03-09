@@ -1,4 +1,5 @@
 en:
+  finish_weekend: Finish Weekend
   activerecord:
     attributes:
       registration:

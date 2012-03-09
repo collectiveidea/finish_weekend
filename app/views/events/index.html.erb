@@ -1,1 +1,8 @@
-<%= link_to "Register", new_registration_path %>
+<ol>
+  <% @events.each do |event| %>
+    <li>
+      <%= event_title(event) %>
+      <%= link_to "Register", new_event_registration_path(event) %>
+    </li>
+  <% end %>
+</ol>

@@ -1,4 +1,4 @@
-<%= form_for @registration do |form| %>
+<%= form_for @registration, url: [@event, :registrations] do |form| %>
   <div>
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
