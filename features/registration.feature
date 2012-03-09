@@ -15,8 +15,7 @@ Feature: Registration
       | CVC                | 123                     |
     And I press "Register"
     Then I should see "Thank you"
+    And I should be on the "Boston" event page
+    And I should see "Steve Richert" within the attendees
     And "Steve Richert" should be $30 poorer
     And Finish Weekend should be $30 richer
-
-    When I go to the "Boston" event page
-    Then I should see "Steve Richert" within the attendees
