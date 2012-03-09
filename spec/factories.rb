@@ -16,4 +16,21 @@ FactoryGirl.define do
     registration_email{ Faker::Lorem.paragraphs }
     reminder_email{ Faker::Lorem.paragraphs }
   end
+
+  factory :registration do
+    association :event
+    first_name{ Faker::Name.first_name }
+    last_name{ Faker::Name.last_name }
+    email{|r| Faker::Internet.free_email("#{r.first_name} #{r.last_name}") }
+    shirt_size{ Registration::SHIRT_SIZES.sample }
+  end
+
+  factory :twitter_registration, parent: :registration do
+    twitter_handle{|r| Faker::Internet.user_name("#{r.first_name} #{r.last_name}") }
+    twitter_token do
+      id    = SecureRandom.random_number(1_000_000_000)
+      token = SecureRandom.urlsafe_base64(40).tr("_-", "").slice(0..40)
+      "#{id}-#{token}"
+    end
+  end
 end
