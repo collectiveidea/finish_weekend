@@ -1,5 +1,15 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      registration:
+        first_name: First Name
+        last_name: Last Name
+        email: Email Address
+        twitter_handle: Twitter Handle
+        description: Short Bio
+        location: Location
+        project: What are you going to finish?
+        shirt_size: Shirt Size
+        dietary_needs: Dietary Needs
+  credit_card_number: Credit Card Number
+  credit_card_code: CVC

@@ -1,0 +1,25 @@
+<%= form_for @registration do |form| %>
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+  <div>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <%= label_tag :credit_card_number, t(:credit_card_number) %>
+    <%= text_field_tag :credit_card_number, nil, name: nil %>
+  </div>
+  <div>
+    <%= label_tag :credit_card_code, t(:credit_card_code) %>
+    <%= text_field_tag :credit_card_code, nil, name: nil %>
+  </div>
+  <div>
+    <%= form.submit "Register", name: nil %>
+  </div>
+<% end %>
