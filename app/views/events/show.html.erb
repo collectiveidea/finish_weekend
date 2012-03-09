@@ -1,0 +1,15 @@
+<header>
+  <h1><%= event_title(@event) %></h1>
+  <h2><%= event_dates(@event) %></h2>
+  <h3><%= @event.city %>, <%= @event.state %></h3>
+</header>
+<section>
+  <header>
+    <h1>Attendees</h1>
+  </header>
+  <ol>
+    <% @event.registrations.each do |registration| %>
+      <li><%= registration.name %></li>
+    <% end %>
+  </ol>
+</section>

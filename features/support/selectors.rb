@@ -3,6 +3,8 @@ module HtmlSelectorsHelpers
     case locator
     when "the page"
       "html > body"
+    when /^the "(.*?)" list$/
+      "header:contains('#{$1}') + ol"
     when /^"(.+)"$/
       $1
     else

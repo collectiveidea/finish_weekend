@@ -16,6 +16,6 @@ Feature: Registration
     And I press "Register"
     Then I should see "Thank you"
     And I should be on the "Boston" event page
-    And I should see "Steve Richert" within the attendees
+    And I should see "Steve Richert" within the "Attendees" list
     And "Steve Richert" should be $30 poorer
     And Finish Weekend should be $30 richer
