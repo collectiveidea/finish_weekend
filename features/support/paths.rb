@@ -3,6 +3,8 @@ module NavigationHelpers
     case page_name
     when "the homepage"
       "/"
+    when /^the "(.*?)" event page$/
+      event_path(Event.find_by_name!($1))
     when /^the (.+) page$/
       send("#{$1.parameterize("_")}_path")
     else
