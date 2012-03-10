@@ -2,6 +2,7 @@
 .bundle
 .DS_Store
 .rvmrc
+chromedriver.log
 config/application.yml
 config/database.yml
 log/*.log
