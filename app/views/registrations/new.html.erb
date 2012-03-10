@@ -1,10 +1,9 @@
-<% content_for :javascripts do %>
-  <%= javascript_include_tag "https://js.stripe.com/v1/" %>
-<% end %>
 <% content_for :meta do %>
   <%= tag :meta, name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"] %>
 <% end %>
-<%= form_for @registration, url: [@event, :registrations] do |form| %>
+<div id="stripe_error"></div>
+<%= form_for @registration, url: [@event, :registrations], html: {id: "stripe"} do |form| %>
+  <%= form.hidden_field :stripe_token, id: "stripe_token" %>
   <div>
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
@@ -18,12 +17,33 @@
     <%= form.text_field :email %>
   </div>
   <div>
-    <%= label_tag :credit_card_number, t(:credit_card_number) %>
+    <%= label_tag :credit_card_number, t("stripe.credit_card_number") %>
     <%= text_field_tag :credit_card_number, nil, name: nil %>
   </div>
   <div>
-    <%= label_tag :credit_card_code, t(:credit_card_code) %>
+    <%= label_tag :credit_card_code, t("stripe.credit_card_code") %>
     <%= text_field_tag :credit_card_code, nil, name: nil %>
+  </div>
+  <div>
+    <%= label_tag :credit_card_month, t("stripe.credit_card_month") %>
+    <select id="credit_card_month">
+      <option value="01" selected="selected">01 - January</option>
+      <option value="02">02 - February</option>
+      <option value="03">03 - March</option>
+      <option value="04">04 - April</option>
+      <option value="05">05 - May</option>
+      <option value="06">06 - June</option>
+      <option value="07">07 - July</option>
+      <option value="08">08 - August</option>
+      <option value="09">09 - September</option>
+      <option value="10">10 - October</option>
+      <option value="11">11 - November</option>
+      <option value="12">12 - December</option>
+    </select>
+  </div>
+  <div>
+    <%= label_tag :credit_card_year, t("stripe.credit_card_year") %>
+    <%= select_tag :credit_card_year, options_for_select(Time.current.year..(Time.current.year + 10), Time.current.year) %>
   </div>
   <div>
     <%= form.submit "Register", name: nil %>

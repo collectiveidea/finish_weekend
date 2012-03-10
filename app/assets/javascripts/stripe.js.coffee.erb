@@ -1,0 +1,34 @@
+$ ->
+  if $("meta[name=stripe-key]").length
+    $.getScript "https://js.stripe.com/v1/", (_, status) ->
+      if status == "success"
+        Stripe.setPublishableKey $("meta[name=stripe-key]").attr("content")
+        stripe.setup()
+      else
+        stripe.error <%= I18n.t("stripe.connection_error").to_json %>
+
+stripe =
+  setup: ->
+    $("#stripe").submit (event) ->
+      event.preventDefault()
+      $("#stripe :submit").attr "disabled", true
+      stripe.process()
+
+  process: ->
+    card =
+      number:   $("#credit_card_number").val()
+      cvc:      $("#credit_card_code")  .val()
+      expMonth: $("#credit_card_month") .val()
+      expYear:  $("#credit_card_year")  .val()
+    Stripe.createToken card, stripe.handle
+
+  handle: (status, response) ->
+    if status == 200
+      $("#stripe_token").val response.id
+      $("#stripe")[0].submit()
+    else
+      stripe.error response.error.message
+      $("#stripe :submit").attr "disabled", false
+
+  error: (message) ->
+    $("#stripe_error").text message

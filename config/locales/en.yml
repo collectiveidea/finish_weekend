@@ -12,7 +12,12 @@ en:
         project: What are you going to finish?
         shirt_size: Shirt Size
         dietary_needs: Dietary Needs
-  credit_card_number: Credit Card Number
-  credit_card_code: CVC
   flash:
     registration_created: Thank you!
+  stripe:
+    credit_card_number: Credit Card Number
+    credit_card_code: CVC
+    credit_card_month: Expiration Month
+    credit_card_year: Expiration Year
+    description: "Finish Weekend %{event}: %{name}"
+    connection_error: Sorry. We’re having trouble connecting to our payment provider. Please refresh to try again.
