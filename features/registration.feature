@@ -4,7 +4,7 @@ Feature: Registration
       | name   | price |
       | Boston | 30.00 |
 
-  @javascript
+  @javascript @payment
   Scenario: Successful registration
     Given I am on the homepage
     When I follow "Register"
@@ -20,5 +20,4 @@ Feature: Registration
     Then I should see "Thank you"
     And I should be on the "Boston" event page
     And I should see "Steve Richert" within the "Attendees" list
-    And "Steve Richert" should be $30 poorer
-    And Finish Weekend should be $30 richer
+    And $30.00 should have been charged
