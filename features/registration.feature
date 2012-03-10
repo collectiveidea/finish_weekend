@@ -17,6 +17,7 @@ Feature: Registration
     And I select "01 - January" from "Expiration Month"
     And I select "2020" from "Expiration Year"
     And I press "Register"
+    And I wait for payment processing
     Then I should see "Thank you"
     And I should be on the "Boston" event page
     And I should see "Steve Richert" within the "Attendees" list
