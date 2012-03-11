@@ -5,6 +5,8 @@ module NavigationHelpers
       "/"
     when /^the "(.*?)" event page$/
       event_path(Event.find_by_name!($1))
+    when /^the "(.*?)" registration page$/
+      new_event_registration_path(Event.find_by_name!($1))
     when /^the (.+) page$/
       send("#{$1.parameterize("_")}_path")
     else

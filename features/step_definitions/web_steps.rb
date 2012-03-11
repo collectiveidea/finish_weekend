@@ -73,6 +73,10 @@ Then /^I should not see "(.*?)"$/ do |text|
   page.should have_no_content(text)
 end
 
+Then /^I should see errors$/ do
+  page.should have_css("#flash .error")
+end
+
 Then /^the "(.*?)" field(?: within (.+))? should contain "(.*?)"$/ do |field, locator, value|
   within_locator(locator) do
     field = find_field(field)

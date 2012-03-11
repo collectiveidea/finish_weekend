@@ -21,5 +21,8 @@ class Registration < ActiveRecord::Base
         currency:    "usd",
         description: I18n.t("stripe.description", event: event.name, name: name)
       )
+    rescue Stripe::StripeError
+      errors.add(:base)
+      false
     end
 end

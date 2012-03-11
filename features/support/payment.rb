@@ -8,7 +8,7 @@ module PaymentHelpers
   end
 
   def charges
-    Stripe::Charge.all.data.sort_by(&:created).reverse
+    Stripe::Charge.all.data.select(&:paid).sort_by(&:created).reverse
   end
 
   def latest_charge

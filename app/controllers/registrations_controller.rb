@@ -10,7 +10,11 @@ class RegistrationsController < ApplicationController
 
   def create
     @registration = @event.registrations.create(params[:registration])
-    flash[:notice] = t("flash.registration_created") if @registration.persisted?
+    if @registration.persisted?
+      flash[:notice] = t("flash.registration_created")
+    else
+      flash.now[:error] = t("flash.registration_error")
+    end
     respond_with @registration, location: @event
   end
 
