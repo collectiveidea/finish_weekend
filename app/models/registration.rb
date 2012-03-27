@@ -9,6 +9,7 @@ class Registration < ActiveRecord::Base
 
   validates :first_name, :last_name, presence: true
   validates :email, presence: true, uniqueness: true, email: true
+  validates :shirt_size, inclusion: {in: SHIRT_SIZES}
   validates :stripe_token, presence: true, on: :create
 
   before_create :charge
