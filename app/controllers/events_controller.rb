@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by_slug!(params[:id])
+    @registrations = @event.registrations.visible
     respond_with @event
   end
 end

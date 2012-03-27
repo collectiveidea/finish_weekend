@@ -8,7 +8,7 @@
     <h1>Attendees</h1>
   </header>
   <ol>
-    <% @event.registrations.each do |registration| %>
+    <% @registrations.each do |registration| %>
       <li><%= registration.name %></li>
     <% end %>
   </ol>

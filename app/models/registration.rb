@@ -5,6 +5,8 @@ class Registration < ActiveRecord::Base
 
   belongs_to :event
 
+  scope :visible, where(hidden: false)
+
   attr_accessor :stripe_token
 
   validates :first_name, :last_name, presence: true

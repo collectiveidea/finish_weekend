@@ -12,6 +12,7 @@ en:
         project: What are you going to finish?
         shirt_size: Shirt Size
         dietary_needs: Dietary Needs
+        hidden: Please do not show my name in the list of attendees.
   flash:
     registration_created: Thank you!
     registration_error: There was a problem with your registration. Please review below and try again.

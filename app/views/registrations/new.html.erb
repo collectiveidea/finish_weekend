@@ -50,6 +50,10 @@
     <%= select_tag :credit_card_year, options_for_select(Time.current.year..(Time.current.year + 10), Time.current.year) %>
   </div>
   <div>
+    <%= form.label :hidden %>
+    <%= form.check_box :hidden %>
+  </div>
+  <div>
     <%= form.submit "Register", name: nil %>
   </div>
 <% end %>
