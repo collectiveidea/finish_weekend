@@ -4,6 +4,7 @@ Feature: Registration
     Given the following event exists:
       | name   | price |
       | Boston | 30.00 |
+    And it is "March 1, 2012"
 
   Scenario: Successful registration
     Given I am on the homepage

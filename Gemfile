@@ -20,4 +20,5 @@ group :development, :test do
   gem "faker", "~> 1.0"
   gem "pry", "~> 0.9"
   gem "rspec-rails", "~> 2.8"
+  gem "timecop", "~> 0.3"
 end
