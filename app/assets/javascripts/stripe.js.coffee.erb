@@ -31,4 +31,4 @@ stripe =
       $("#stripe :submit").attr "disabled", false
 
   error: (message) ->
-    $("#stripe_error").text message
+    $("#flash").remove(".error").append $('<p class="error">').text(message)

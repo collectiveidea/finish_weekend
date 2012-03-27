@@ -42,7 +42,49 @@ Feature: Registration
     And $0.00 should have been charged
 
   Scenario: Invalid credit card number
+    Given I am on the "Boston" registration page
+    When I fill in the following:
+      | First Name         | Steve                   |
+      | Last Name          | Richert                 |
+      | Email              | steve.richert@gmail.com |
+      | Credit Card Number | 4242424242424241        |
+      | CVC                | 123                     |
+    And I select "01 - January" from "Expiration Month"
+    And I select "2020" from "Expiration Year"
+    And I press "Register"
+    And I wait for payment processing
+    Then I should see errors
+    And I should not see "Thank you"
+    And $0.00 should have been charged
 
   Scenario: Past credit card expiration
+    Given I am on the "Boston" registration page
+    When I fill in the following:
+      | First Name         | Steve                   |
+      | Last Name          | Richert                 |
+      | Email              | steve.richert@gmail.com |
+      | Credit Card Number | 4242424242424242        |
+      | CVC                | 123                     |
+    And I select "01 - January" from "Expiration Month"
+    And I select "2012" from "Expiration Year"
+    And I press "Register"
+    And I wait for payment processing
+    Then I should see errors
+    And I should not see "Thank you"
+    And $0.00 should have been charged
 
   Scenario: Invalid CVC
+    Given I am on the "Boston" registration page
+    When I fill in the following:
+      | First Name         | Steve                   |
+      | Last Name          | Richert                 |
+      | Email              | steve.richert@gmail.com |
+      | Credit Card Number | 4242424242424242        |
+      | CVC                | 99                      |
+    And I select "01 - January" from "Expiration Month"
+    And I select "2020" from "Expiration Year"
+    And I press "Register"
+    And I wait for payment processing
+    Then I should see errors
+    And I should not see "Thank you"
+    And $0.00 should have been charged
