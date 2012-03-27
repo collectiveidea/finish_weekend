@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120309160212) do
+ActiveRecord::Schema.define(:version => 20120327174751) do
 
   create_table "events", :force => true do |t|
     t.string   "slug"
@@ -52,12 +52,14 @@ ActiveRecord::Schema.define(:version => 20120309160212) do
     t.text     "project"
     t.string   "shirt_size"
     t.text     "dietary_needs"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
+    t.boolean  "hidden",         :default => false, :null => false
   end
 
   add_index "registrations", ["created_at"], :name => "index_registrations_on_created_at"
   add_index "registrations", ["email"], :name => "index_registrations_on_email", :unique => true
   add_index "registrations", ["event_id"], :name => "index_registrations_on_event_id"
+  add_index "registrations", ["hidden"], :name => "index_registrations_on_hidden"
 
 end
