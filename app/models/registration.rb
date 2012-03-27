@@ -1,3 +1,5 @@
+require "email_validator"
+
 class Registration < ActiveRecord::Base
   SHIRT_SIZES = %w(XS S M L XL XXL XXXL)
 
@@ -5,6 +7,8 @@ class Registration < ActiveRecord::Base
 
   attr_accessor :stripe_token
 
+  validates :first_name, :last_name, presence: true
+  validates :email, presence: true, uniqueness: true, email: true
   validates :stripe_token, presence: true, on: :create
 
   before_create :charge
