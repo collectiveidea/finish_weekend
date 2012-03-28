@@ -4,5 +4,5 @@ notifications:
   email:
     - steve@collectiveidea.com
   webhooks:
-    urls: http://www.postbin.org/1ipvfoh
+    urls: http://www.postbin.org/n026i0
     on_start: true
