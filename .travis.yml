@@ -3,4 +3,6 @@ rvm:
 notifications:
   email:
     - steve@collectiveidea.com
-  webhooks: http://www.postbin.org/t692mr
+  webhooks:
+    urls: http://www.postbin.org/1ipvfoh
+    on_start: true
