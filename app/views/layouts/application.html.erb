@@ -37,21 +37,21 @@
       <div id="stationary">
         <div id="tab"><span>fw is coming to:</span></div>
         <div id="event-nav">
-            <a id="prev">previous finishweekend event</a>
-            <a id="next">next finishweekend event</a>
+          <a id="prev">previous finishweekend event</a>
+          <a id="next">next finishweekend event</a>
         </div>
       </div>
         
       <article id="event">
         <div id="location">
-            <img src="<%= asset_path "boston.jpg" %>" alt="finishweekend in boston" title="boston is preeettyy!">
-            <a id="register" href="#"><h1>Register</h1></a>
+          <img src="<%= asset_path "boston.jpg" %>" alt="finishweekend in boston" title="boston is preeettyy!">
+          <a id="register" href="<%= new_event_registration_path @events.first %>"><h1>Register</h1></a>
         </div>
         <div id="info">
-            <h1 id="city">Boston</h1>
-            <h2 id="state">Massachusetts</h2>
-            <h1 id="date">March 24 - 25</h1>
-            <h2 id="address">118 South State Street, @ the Hilton</h2>
+          <h1 id="city">Boston</h1>
+          <h2 id="state">Massachusetts</h2>
+          <h1 id="date">March 24 - 25</h1>
+          <h2 id="address">118 South State Street, @ the Hilton</h2>
         </div>            
       </article>
 
@@ -59,13 +59,10 @@
     
     <section id="navigation">
       <nav>
-        <h1 id="title">Finish Weekend</h1>
+        <h1 id="title"><%= link_to "Finish Weekend", root_path %></h1>
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">People</a></li>
-            <li><a href="#">Sponsors</a></li>
-            <li><a href="#">Schedule</a></li>
-            <li><a href="#">FAQs</a></li>
+          <li><%= link_to "Events", events_path %></li>
+          <li><%= link_to "FAQs", faq_path %></li>
         </ul>
       </nav>
     </section><!-- #navigation -->
@@ -76,7 +73,7 @@
   </section><!-- #main-content -->
 
   <footer>
-    <small>© 2011. Brought to you by Collective Idea. Questions? Get in touch with us at info@finishweekend.com.</small>
+  <small>© 2011–2012. Brought to you by <a href="http://collectiveidea.com">Collective Idea</a>. Questions? Get in touch with us at <a href="mailto:finishweekend@collectiveidea.com">finishweekend@collectiveidea.com</a>.</small>
   </footer>
 </body>
 </html>
