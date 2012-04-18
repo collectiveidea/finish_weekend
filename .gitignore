@@ -7,3 +7,6 @@ config/application.yml
 config/database.yml
 log/*.log
 tmp
+
+# Ignore application configuration
+/config/application.yml
