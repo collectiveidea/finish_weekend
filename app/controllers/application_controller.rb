@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :find_future_events
+  before_filter :find_future_events, :find_current_event
 
   def current_event
     current_event ||= Event.where("starts_at > :today", :today => Date.current).first
@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 
   def find_future_events
     @events = Event.scoped
+  end
+
+  def find_current_event
+    @current_event = current_event
   end
 
 end

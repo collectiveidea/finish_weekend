@@ -111,10 +111,10 @@
   <p class="section-description">Heads up. Future @finishweekend events:</p>
        
        
-  <% 3.times do |i| %>      
-    <div class="three-col" id="right">
-      <h3 class="sub-section-title">Sand Diego, CA</h3>
-      <p>May</p>
+  <% @upcoming.each do |event| %>      
+    <div class="three-col" id="left">
+      <h3 class="sub-section-title"><%= link_to event.name, new_event_registration_path(event) %></h3>
+      <p><%= event.starts_at.strftime "%B" %></p>
     </div>
   <% end %>
                 

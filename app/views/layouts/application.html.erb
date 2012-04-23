@@ -45,13 +45,13 @@
       <article id="event">
         <div id="location">
           <img src="<%= asset_path "boston.jpg" %>" alt="finishweekend in boston" title="boston is preeettyy!">
-          <a id="register" href="<%= new_event_registration_path @events.first %>"><h1>Register</h1></a>
+          <a id="register" href="<%= new_event_registration_path @current_event %>"><h1>Register</h1></a>
         </div>
         <div id="info">
-          <h1 id="city">Boston</h1>
-          <h2 id="state">Massachusetts</h2>
-          <h1 id="date">March 24 - 25</h1>
-          <h2 id="address">118 South State Street, @ the Hilton</h2>
+          <h1 id="city"><%= @current_event.name %></h1>
+          <h2 id="state"><%= @current_event.state %></h2>
+          <h1 id="date"><%= @current_event.starts_at.strftime "%B %d" %>–<%= @events.first.ends_at.strftime "%d" %></h1>
+          <h2 id="address"><%= @current_event.address %></h2>
         </div>            
       </article>
 
