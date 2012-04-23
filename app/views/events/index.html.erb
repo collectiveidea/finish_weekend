@@ -1,140 +1,23 @@
-<article>
-  <header>
-    <h2>About</h2>
-  </header>
-        
-  <p class="section-description">We've all heard of startup weekends. Many of us have participated in one. Coming up with a new idea is easy, so is getting started. Finishing is hard. Finish Weekend helps you get it done. Come finish those projects you've put off to the side. Maybe you just need a bit of web help, a logo, or some code written. <span>We'll help you finish.</span></p>
-        
-  <div class="two-col" id="right">
-    <h3 class="sub-section-title">Finish Weekend MVPs</h3>
-    <p>Finished! Check out the projects below that have been launched during @finishweekend.</p>
-    <div id="slider">
-      <a href="#" id="prev">slider-prev</a>
-      <a href="#" id="next">slider-next</a>
-      <img src="<%= asset_path "featured-img.jpg" %>" alt="fw mvps" title="look at this!">
-    </div>
-  </div>
-        
-  <div class="two-col" id="left">
-    <h3 class="sub-section-title">Suggested Projects</h3>
-    <p>Something that can be released in a weekend. Not a final version, but something to get it in front of people. Maybe you've been coding up a killer app, but need help building a website to announce it. Maybe you have a nasty bug you need help with. Maybe you need some copy written. Maybe you just need a few hours of encouragement. We'll get your project polished up and ready to go.<br>Bring a project, and get ready to ship it!</p>
-  </div>
-        
-  <div class="clearfix"></div>
-</article><!-- #article -->
 
-<article>
-  <header>
-    <h2>Sponsors</h2>
-  </header>
-        
-  <p class="section-description">Supporting Finish Weekend</p>
-        
-  <div class="three-col" id="right">
-    <img src="<%= asset_path "img-hold.png" %>" alt="" height="150" width="200">
-  </div>
-        
-  <div class="three-col" id="center">
-    <img src="<%= asset_path "img-hold.png" %>" alt="" height="150" width="200">
-  </div>
-        
-  <div class="three-col" id="left">
-    <img src="<%= asset_path "img-hold.png" %>" alt="" height="150" width="200">
-  </div>
-        
-  <div class="one-col">
-    <ul id="secondary-sponsors">
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    </ul>
-  </div>
-        
-  <div class="clearfix"></div>
-</article><!-- #article -->
-    
-<article>
-  <header>
-    <h2>People</h2>
-  </header>
-        
-  <p class="section-description">Your best buds will be there.</p>
-        
-  <div class="one-col">
-    <ul id="people-list">
-      <% 35.times do |i|%>
-        <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="25" width="25"></li>
-      <% end %>
-    </ul>
-  </div>
-        
-  <div class="clearfix"></div>
-</article><!-- #article -->
+<h2>Upcoming Events</h2>
+<ul class="event-list">
+<% @upcoming_events.each do |event| %>
+  <li>
+    <img src="">
+    <%= link_to "Register", new_event_registration_path(event) %>
+    <h3><%= event.name %></h3>
+    <%= event.starts_at.strftime("%B %d") %> – <%= event.ends_at.strftime("%d") %> 
+  </li>
+<% end %>
+</ul>
 
-<article>
-  <header>
-      <h2>FAQs</h2>
-  </header>
-        
-  <p class="section-description">Frequently Asked Questions.</p>
-        
-  <div class="three-col" id="right">
-    <h3 class="sub-section-title">Registration</h3>
-    <p><strong>Do I need to register?</strong>No, but it helps us plan properly and you get guaranteed food and a t-shirt!</p>
-    <p><strong>Can I just come for part?</strong>Yes! We'd prefer you register, but drop-ins are welcome. Did we mention you get a t-shirt if you register?</p>
-    <p><strong>Do I get a T-shirt?</strong>Yes! But only if you register.</p>
-            
-    <h3 class="sub-section-title">The Future<small>TM</small></h3>
-    <p><strong>Come to my city!</strong>Ok, that's not a question, but we'd love to! We'll announce plans after our inaugural event. Want to help? Get in touch.</p>
-    <p><strong>When is the next one?</strong>We'll be announcing plans after the first one.</p>
-  </div>
-        
-  <div class="three-col" id="center">
-    <h3 class="sub-section-title">Logistics</h3>
-    <p><strong>Is there food?</strong>Yes! We'll provide lots of food and drink. There are also lots of places within walking distance. By registering, you help ensure we have enough.</p>
-    <p><strong>Where do I sleep?</strong>Many people will go home or stay up all night. We will have places you can crash, and hotel rooms available. If you need a place to crash, please contact us.</p>
-    <p><strong>Is there a program?</strong>We have a loose schedule but the goal is to get together to finish things. The program isn't very formal, but full of fun.</p>
-  </div>
-        
-  <div class="three-col" id="left">
-    <h3 class="sub-section-title">Project</h3>
-    <p><strong>Do I need a project?</strong>Nope! Just come and help other people finish. You can be a help with whatever skills you have, or simply provide encouragement.</p>
-    <p><strong>What kind of projects?</strong>Anything! Want to launch an app? Create a blog? Write a novel? Rebuild your engine? We don't care, just bring something you want to finish?</p>
-    <p><strong>Do I have to finish?</strong>Well, that's the goal, but we also want to help you finish something. Can you trim out features, or reduce your scope for your first release? Can you release a demo or rough draft? We'll help you get something finished so that you'll have motivation to keep up with it after.</p>
-  </div>
-        
-  <div class="clearfix"></div>
-</article><!-- #article -->
-    
-<article>
-  <header>
-    <h2>Schedule</h2>
-  </header>
-        
-  <p class="section-description">Productivity needs a plan.</p>
-        
-  <div class="three-col" id="right">
-    <h3 class="sub-section-title">Important Details</h3>
-    <p><strong>Sleeping/Lodging</strong>More information will be coming on other lodging...</p>
-    <p>We'll provide ample amounts of food, drink, and caffeine. There are also lots of restaurants within walking distance.</p>
-  </div>
-        
-  <div class="three-col" id="center">
-    <h3 class="sub-section-title">2nd Day</h3>
-    <p><strong>8:00</strong>Breakfast and refocus</p>
-    <p><strong>3:00</strong>Show and tell about what we finished</p>
-  </div>
-        
-  <div class="three-col" id="left">
-    <h3 class="sub-section-title">1st Day</h3>
-    <p><strong>8:00 – 8:45</strong>Coffee and donuts and getting setup</p>
-    <p><strong>8:45 – 9:00</strong>Official kickoff and announcements of what we intend to finish over the weekend</p>
-    <p><strong>12:00</strong>Food! Feed the brain</p>
-    <p><strong>6:00</strong>More food</p>
-  </div>
-        
-  <div class="clearfix"></div>
-</article><!-- #article -->
-   
+<h2>Previous Events</h2>
+<ul class="event-list">
+<% @previous_events.each do |event| %>
+  <li>
+    <img src="">
+    <h3><%= event.name %></h3>
+    <%= event.starts_at.strftime("%B %d") %> – <%= event.ends_at.strftime("%d") %> 
+  </li>
+<% end %>
+</ul>
