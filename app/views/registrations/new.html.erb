@@ -27,6 +27,10 @@
     <%= form.select :shirt_size, Registration::SHIRT_SIZES %>
   </div>
   <div>
+    <%= form.label :coupon %>
+    <%= form.text_field :coupon %>
+  </div>
+  <div>
     <%= label_tag :credit_card_number, t("stripe.credit_card_number") %>
     <%= text_field_tag :credit_card_number, nil, name: nil %>
   </div>

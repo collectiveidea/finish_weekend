@@ -13,6 +13,7 @@ en:
         shirt_size: Shirt Size
         dietary_needs: Dietary Needs
         hidden: Please do not show my name in the list of attendees.
+        coupon: Coupon Code
   flash:
     registration_created: Thank you!
     registration_error: There was a problem with your registration. Please review below and try again.
