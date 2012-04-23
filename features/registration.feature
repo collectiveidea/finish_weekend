@@ -17,8 +17,8 @@ Feature: Registration
       | Email              | steve.richert@gmail.com |
       | Credit Card Number | 4242424242424242        |
       | CVC                | 123                     |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see "Thank you"
@@ -34,8 +34,8 @@ Feature: Registration
       | Email              | steve.richert@gmail.com |
       | Credit Card Number | 4242424242424242        |
       | CVC                | 123                     |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I check "Please do not show my name in the list of attendees."
     And I press "Register"
     And I wait for payment processing
@@ -52,8 +52,8 @@ Feature: Registration
       | Email              | steve.richert@gmail.com |
       | Credit Card Number | 4242424242424242        |
       | CVC                | 123                     |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see errors
@@ -68,8 +68,8 @@ Feature: Registration
       | Email              | steve.richert@gmail.com |
       | Credit Card Number | 4242424242424242        |
       | CVC                | 123                     |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see errors
@@ -84,8 +84,8 @@ Feature: Registration
       | Email              |                  |
       | Credit Card Number | 4242424242424242 |
       | CVC                | 123              |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see errors
@@ -100,8 +100,8 @@ Feature: Registration
       | Email              | steve.richert@gmail |
       | Credit Card Number | 4242424242424242    |
       | CVC                | 123                 |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see errors
@@ -116,8 +116,8 @@ Feature: Registration
       | Email              | steve.richert@gmail.com |
       | Credit Card Number | 4000000000000002        |
       | CVC                | 123                     |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see errors
@@ -132,8 +132,8 @@ Feature: Registration
       | Email              | steve.richert@gmail.com |
       | Credit Card Number | 4242424242424241        |
       | CVC                | 123                     |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see errors
@@ -148,8 +148,8 @@ Feature: Registration
       | Email              | steve.richert@gmail.com |
       | Credit Card Number | 4242424242424242        |
       | CVC                | 123                     |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2012" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2012" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see errors
@@ -164,8 +164,8 @@ Feature: Registration
       | Email              | steve.richert@gmail.com |
       | Credit Card Number | 4242424242424242        |
       | CVC                | 99                      |
-    And I select "01 - January" from "Expiration Month"
-    And I select "2020" from "Expiration Year"
+    And I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
     Then I should see errors

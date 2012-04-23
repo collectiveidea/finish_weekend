@@ -1,6 +1,9 @@
 <% content_for :meta do %>
   <%= tag :meta, name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"] %>
 <% end %>
+<aside id="event-price">
+  $<%= @event.price %> 
+</aside>
 <div id="stripe_error"></div>
 <%= form_for @registration, url: [@event, :registrations], html: {id: "stripe"} do |form| %>
   <%= form.hidden_field :stripe_token, id: "stripe_token" %>
@@ -44,14 +47,11 @@
       <option value="11">11 - November</option>
       <option value="12">12 - December</option>
     </select>
-  </div>
-  <div>
-    <%= label_tag :credit_card_year, t("stripe.credit_card_year") %>
     <%= select_tag :credit_card_year, options_for_select(Time.current.year..(Time.current.year + 10), Time.current.year) %>
   </div>
   <div>
-    <%= form.label :hidden %>
     <%= form.check_box :hidden %>
+    <%= form.label :hidden, :class => 'checkbox-label' %>
   </div>
   <div>
     <%= form.submit "Register", name: nil %>

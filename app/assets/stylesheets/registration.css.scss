@@ -1,0 +1,27 @@
+#event-price {
+  float: right;
+  margin: 40px 10px 0 0;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.new_registration {
+  margin: 20px 0 0 0;
+  
+  label {
+    display: inline-block;
+    width: 200px;
+    margin: 10px 5px;
+    text-align: right;
+  }
+
+  input[type=checkbox], input[type=submit] {
+    margin: 10px 0 0 213px;
+  }
+
+  .checkbox-label {
+    width: 375px;
+  }
+
+}
+
