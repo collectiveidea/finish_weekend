@@ -171,3 +171,25 @@ Feature: Registration
     Then I should see errors
     And I should not see "Thank you"
     And $0.00 should have been charged
+
+
+  Scenario: Using a Coupon Code for $5
+    Given the following coupons exist:
+      | Event       | Code | Amount |
+      | name:Boston | TEST | 5.00   |
+    And I am on the "Boston" registration page
+    When I fill in the following:
+      | First Name         | Steve                   |
+      | Last Name          | Richert                 |
+      | Email              | steve.richert@gmail.com |
+      | Coupon             | TEST                    |
+      | Credit Card Number | 4242424242424242        |
+      | CVC                | 999                     |
+    Then I should see "$25.00"
+    When I select "01 - January" from "Expiration Date"
+    And I select "2020" from "credit_card_year"
+    And I press "Register"
+    And I wait for payment processing
+    Then I should see errors
+    And I should see "Thank you"
+    And $25.00 should have been charged
