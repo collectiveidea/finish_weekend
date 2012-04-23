@@ -1,5 +1,6 @@
 class RegistrationsController < ApplicationController
-  respond_to :html
+  respond_to :html, :except => :coupon
+  respond_to :json, :only   => :coupon
 
   before_filter :load_event
 
@@ -16,6 +17,12 @@ class RegistrationsController < ApplicationController
       flash.now[:error] = t("flash.registration_error")
     end
     respond_with @registration, location: @event
+  end
+
+  def coupon
+    coupon = @event.coupons.find_by_code(params[:coupon_code])
+    render :json => coupon if coupon
+    render :nothing => true, :status => 404 unless coupon
   end
 
   private

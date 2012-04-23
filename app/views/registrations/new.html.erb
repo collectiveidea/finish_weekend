@@ -2,7 +2,7 @@
   <%= tag :meta, name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"] %>
 <% end %>
 <aside id="event-price">
-  <span>
+  <span data-original-price="<%= @event.price %>">
     <%= number_to_currency @event.price %> 
   </span>
   <p>Per Registration</p>
@@ -30,15 +30,15 @@
     <%= form.label :coupon %>
     <%= form.text_field :coupon %>
   </div>
-  <div>
+  <div class="cc-info">
     <%= label_tag :credit_card_number, t("stripe.credit_card_number") %>
     <%= text_field_tag :credit_card_number, nil, name: nil %>
   </div>
-  <div>
+  <div class="cc-info">
     <%= label_tag :credit_card_code, t("stripe.credit_card_code") %>
     <%= text_field_tag :credit_card_code, nil, name: nil %>
   </div>
-  <div>
+  <div class="cc-info">
     <%= label_tag :credit_card_month, t("stripe.credit_card_month") %>
     <select id="credit_card_month">
       <option value="01" selected="selected">01 - January</option>

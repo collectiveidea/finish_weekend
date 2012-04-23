@@ -12,7 +12,11 @@ stripe =
     $("#stripe").submit (event) ->
       event.preventDefault()
       $("#stripe :submit").attr "disabled", true
-      stripe.process()
+      if $("#event-price span").text() != "$0.00"
+        stripe.process()
+      else
+        $("#stripe_token").val "nocharge"
+        $("#stripe")[0].submit()
 
   process: ->
     card =

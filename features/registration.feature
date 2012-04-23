@@ -190,6 +190,21 @@ Feature: Registration
     And I select "2020" from "credit_card_year"
     And I press "Register"
     And I wait for payment processing
-    Then I should see errors
-    And I should see "Thank you"
+    Then I should see "Thank you"
     And $25.00 should have been charged
+
+  Scenario: Using a Coupon Code for greater then the cost should result in $0 charged
+    Given the following coupons exist:
+      | Event       | Code | Amount |
+      | name:Boston | TEST | 35.00  |
+    And I am on the "Boston" registration page
+    When I fill in the following:
+      | First Name         | Steve                   |
+      | Last Name          | Richert                 |
+      | Coupon             | TEST                    |
+      | Email              | steve.richert@gmail.com |
+    Then I should see "$0.00"
+    And I press "Register"
+    And I wait for payment processing
+    Then I should see "Thank you"
+    And $0.00 should have been charged

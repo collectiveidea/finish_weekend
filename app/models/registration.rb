@@ -22,12 +22,19 @@ class Registration < ActiveRecord::Base
 
   private
     def charge
-      Stripe::Charge.create(
-        amount:      (event.price * 100).to_i,
-        card:        stripe_token,
-        currency:    "usd",
-        description: I18n.t("stripe.description", event: event.name, name: name)
-      )
+      cost = event.price
+      if coupon.present?
+        used_coupon = event.coupons.find_by_code(coupon)
+        cost -= used_coupon.amount if used_coupon
+      end
+      if cost > 0
+        Stripe::Charge.create(
+          amount:      (cost * 100).to_i,
+          card:        stripe_token,
+          currency:    "usd",
+          description: I18n.t("stripe.description", event: event.name, name: name)
+        )
+      end
     rescue Stripe::StripeError
       errors.add(:base)
       false
