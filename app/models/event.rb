@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   has_many :registrations, dependent: :restrict, inverse_of: :event
   has_many :sponsors
+  has_many :coupons
 
   before_create :set_slug
 

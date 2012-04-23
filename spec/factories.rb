@@ -33,4 +33,9 @@ FactoryGirl.define do
       "#{id}-#{token}"
     end
   end
+
+  factory :coupon do
+    association :event
+    code "TEST"
+  end
 end
