@@ -12,6 +12,7 @@ end
 
 gem "jquery-rails", "~> 2.0.1"
 gem "stripe", "~> 1.6.2"
+gem "gravtastic"
 gem "figaro"
 
 group :development, :test do

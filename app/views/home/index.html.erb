@@ -64,8 +64,8 @@
         
   <div class="one-col">
     <ul id="people-list">
-      <% 35.times do |i|%>
-        <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="25" width="25"></li>
+      <% @current_event.registrations.each do |person| %>
+        <li><%= image_tag person.gravatar_url(:secure => true, :size => 25, :rating => "PG", :default => "https://www.finishweekend.com/missing.jpg"), :title => person.name %></li>
       <% end %>
     </ul>
   </div>

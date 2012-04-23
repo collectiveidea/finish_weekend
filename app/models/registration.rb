@@ -1,6 +1,9 @@
 require "email_validator"
 
 class Registration < ActiveRecord::Base
+  include Gravtastic
+  gravtastic
+  
   SHIRT_SIZES = %w(XS S M L XL XXL XXXL)
 
   belongs_to :event

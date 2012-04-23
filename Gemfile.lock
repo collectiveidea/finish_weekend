@@ -74,6 +74,7 @@ GEM
       rails (~> 3.0)
     gherkin (2.9.0)
       json (>= 1.4.6)
+    gravtastic (3.2.6)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.3)
@@ -177,6 +178,7 @@ DEPENDENCIES
   factory_girl_rails (~> 1.7)
   faker (~> 1.0)
   figaro
+  gravtastic
   jquery-rails (~> 2.0.1)
   pg
   pry (~> 0.9)
