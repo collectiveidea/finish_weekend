@@ -5,6 +5,8 @@ module HtmlSelectorsHelpers
       "html > body"
     when /^the "(.*?)" list$/
       "header:contains('#{$1}') + ol"
+    when "the event list"
+      "#event-list"
     when /^"(.+)"$/
       $1
     else

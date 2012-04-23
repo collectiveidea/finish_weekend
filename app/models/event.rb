@@ -7,6 +7,7 @@ class Event < ActiveRecord::Base
 
   scope :upcoming_events, where("starts_at > :date", :date => Date.current).order(:starts_at)
   scope :previous_events, where("ends_at < :date", :date => Date.current).order("starts_at DESC")
+  scope :by_date, order("starts_at DESC")
 
   def to_param
     slug

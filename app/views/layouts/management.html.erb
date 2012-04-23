@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Finish Weekend: Managment</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= content_for :stylesheets %>
+  <%= javascript_include_tag "application" %>
+  <%= content_for :javascripts %>
+  <%= csrf_meta_tags %>
+  <%= content_for :meta %>
+  
+  <!--[if IE]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  
+  <link href='http://fonts.googleapis.com/css?family=Convergence|Patua+One' rel='stylesheet' type='text/css'>
+</head>
+<body class="management">
+  <header>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <%= link_to "Finish Weekend", root_path, :class => "brand" %>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <section id="flash">
+    <% if flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
+  </section>
+  
+  <section class="container wrapper">
+    <aside id="event-list">
+      <ul class="nav nav-pills nav-stacked">
+        <% @events.each do |event| %>
+          <li class="<%= "active" if @event.slug == event.slug %>">
+            <%= link_to event.name, event_manage_path(event) %>
+          </li> 
+        <% end %>
+      </ul>
+    </aside>
+    <section id="event-info">
+      <%= yield %>
+    </section>
+    <footer>
+      © 2011 – 2012 Collective Idea
+    </footer>
+  </section>
+</body>
+</html>

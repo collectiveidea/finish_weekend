@@ -1,0 +1,36 @@
+body.management {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: none;
+
+
+  #event-list {
+    float: left;
+    width: 200px;
+  }
+
+  #event-info {
+    float: left;
+    width: 730px;
+    margin: 0 5px;
+
+    input[type=submit] {
+      margin-left: 160px;
+    }
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+  }
+
+  .wrapper {
+    margin-top: 45px;
+
+    footer {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
