@@ -1,4 +1,4 @@
-
+<% if @upcoming_events.present? %>
 <h2>Upcoming Events</h2>
 <ul class="event-list">
 <% @upcoming_events.each do |event| %>
@@ -10,6 +10,7 @@
   </li>
 <% end %>
 </ul>
+<% end %>
 
 <h2>Previous Events</h2>
 <ul class="event-list">
