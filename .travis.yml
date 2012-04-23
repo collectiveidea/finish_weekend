@@ -2,7 +2,7 @@ rvm:
   - 1.9.3
 notifications:
   email:
-    - steve@collectiveidea.com
+    - tim@collectiveidea.com
   webhooks:
     urls: http://www.postbin.org/n026i0
     on_start: true
