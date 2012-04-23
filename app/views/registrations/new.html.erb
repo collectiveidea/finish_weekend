@@ -2,7 +2,10 @@
   <%= tag :meta, name: "stripe-key", content: ENV["STRIPE_PUBLISHABLE_KEY"] %>
 <% end %>
 <aside id="event-price">
-  $<%= @event.price %> 
+  <span>
+    <%= number_to_currency @event.price %> 
+  </span>
+  <p>Per Registration</p>
 </aside>
 <div id="stripe_error"></div>
 <%= form_for @registration, url: [@event, :registrations], html: {id: "stripe"} do |form| %>

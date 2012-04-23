@@ -1,8 +1,16 @@
 #event-price {
   float: right;
   margin: 40px 10px 0 0;
-  font-size: 60px;
-  font-weight: bold;
+  
+  span {
+    font-size: 60px;
+    font-weight: bold;
+  }
+  p {
+    margin: 5px 0;
+    font-size: 20px;
+    text-align: center;
+  }
 }
 
 .new_registration {
