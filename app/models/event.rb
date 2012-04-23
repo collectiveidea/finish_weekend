@@ -1,17 +1,12 @@
 class Event < ActiveRecord::Base
-  has_many :registrations, dependent: :restrict, inverse_of: :event
+  has_many :registrations, dependent: :restrict
   has_many :sponsors
   has_many :coupons
 
   before_create :set_slug
 
-  def self.upcoming_events
-    where("starts_at > :date", :date => Date.current).order(:starts_at).scoped
-  end
-  
-  def self.previous_events
-    where("ends_at < :date", :date => Date.current).order("starts_at DESC").scoped
-  end
+  scope :upcoming_events, where("starts_at > :date", :date => Date.current).order(:starts_at)
+  scope :previous_events, where("ends_at < :date", :date => Date.current).order("starts_at DESC")
 
   def to_param
     slug
