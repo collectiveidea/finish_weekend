@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120423164307) do
+ActiveRecord::Schema.define(:version => 20120424150837) do
 
   create_table "coupons", :force => true do |t|
     t.integer  "event_id"
@@ -77,6 +77,15 @@ ActiveRecord::Schema.define(:version => 20120423164307) do
     t.integer  "event_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_salt"
+    t.string   "password_hash"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

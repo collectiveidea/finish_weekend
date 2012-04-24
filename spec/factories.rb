@@ -38,4 +38,11 @@ FactoryGirl.define do
     association :event
     code "TEST"
   end
+
+  factory :user do
+    username          "testuser"
+    email             "test@example.com"
+    password          "password"
+    confirm_password  "password"
+  end
 end
