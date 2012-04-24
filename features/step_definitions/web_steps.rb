@@ -74,7 +74,7 @@ Then /^I should not see "(.*?)"$/ do |text|
 end
 
 Then /^I should see errors$/ do
-  page.should have_css("#flash .error")
+  page.should have_css("#flash .alert-error")
 end
 
 Then /^the "(.*?)" field(?: within (.+))? should contain "(.*?)"$/ do |field, locator, value|

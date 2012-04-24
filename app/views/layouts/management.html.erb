@@ -26,16 +26,16 @@
     </div>
   </header>
   
-  <section id="flash">
-    <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:error] %>
-      <p class="error"><%= flash[:error] %></p>
-    <% end %>
-  </section>
-  
   <section class="container wrapper">
+    <section id="flash">
+      <% if flash[:notice] %>
+        <p class="alert alert-success"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:error] %>
+        <p class="alert alert-error"><%= flash[:error] %></p>
+      <% end %>
+    </section>
+
     <aside id="event-list">
       <ul class="nav nav-pills nav-stacked">
         <% @events.each do |event| %>

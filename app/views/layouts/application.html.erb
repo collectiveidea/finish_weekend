@@ -17,15 +17,6 @@
 </head>
 <body>
 
-  <section id="flash">
-    <% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:error] %>
-      <p class="error"><%= flash[:error] %></p>
-    <% end %>
-  </section>
-
   <section id="head">
     <header>
       <h1>Finish Weekend</h1>
@@ -69,7 +60,17 @@
   </section>
 
   <section id="main-content">
+    <section id="flash">
+      <% if flash[:notice] %>
+        <p class="alert alert-success"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:error] %>
+        <p class="alert alert-error"><%= flash[:error] %></p>
+      <% end %>
+    </section>
+
     <%= yield %>
+
   </section><!-- #main-content -->
 
   <footer>
