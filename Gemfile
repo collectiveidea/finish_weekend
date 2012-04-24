@@ -14,6 +14,7 @@ gem "jquery-rails", "~> 2.0.1"
 gem "stripe", "~> 1.6.2"
 gem "gravtastic"
 gem "figaro"
+gem "heroku"
 gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development, :test do
