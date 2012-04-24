@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
   has_many :sponsors
   has_many :coupons
 
+  validates :name, presence: true
+
   before_create :set_slug
 
   scope :upcoming_events, where("starts_at > :date", :date => Date.current).order(:starts_at)

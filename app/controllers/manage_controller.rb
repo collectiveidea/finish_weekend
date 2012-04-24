@@ -16,8 +16,13 @@ class ManageController < ApplicationController
     params[:event][:capacity] = params[:event][:capacity].to_i
     if @event.update_attributes params[:event]
       flash[:notice] = "Updated Successfully"
+      redirect_to :action => :show
+    else
+      flash[:error] = "Errors"
+      render "show"
     end
-    redirect_to :action => :show
+  end
+
   def coupons
 
   end
