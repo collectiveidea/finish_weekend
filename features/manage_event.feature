@@ -1,3 +1,4 @@
+@javascript @management
 Feature: managing an event
 
   Background:
@@ -6,7 +7,7 @@ Feature: managing an event
       | Test | Test Event   | Holland  | Michigan  | US      | 30.00 | 45        | 2012-01-01  | 2012-01-02  | test |
 
   Scenario: Change event attributes
-    Given I am on the management page
+    Given I am logged in as "admin/password"
     And I follow "Test" within the event list
     When I fill in the following:
       | Name        | Collective Idea |
@@ -15,7 +16,7 @@ Feature: managing an event
     Then I should see "Updated Successfully"
 
   Scenario: Name can't be blank
-    Given I am on the management page
+    Given I am logged in as "admin/password"
     And I follow "Test" within the event list
     When I fill in "Name" with ""
     And I press "Update"

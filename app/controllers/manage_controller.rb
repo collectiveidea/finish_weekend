@@ -1,5 +1,7 @@
 class ManageController < ApplicationController
   layout "management"
+  
+  before_filter :authenticate!
   before_filter :find_events
   before_filter :find_event_by_slug, :except => :index
 
