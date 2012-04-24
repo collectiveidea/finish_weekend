@@ -1,0 +1,5 @@
+<ul class="nav nav-tabs">
+  <li class="<%= "active" if request.fullpath =~ /\/manage\/([\w-]+)$/ %>"><%= link_to "Event Info", event_manage_path(@event) %></li>
+  <li class="<%= "active" if request.fullpath =~ /\/coupons$/ %>"><%= link_to "Coupons", event_coupon_path(@event) %></li>
+  <li class="<%= "active" if request.fullpath =~ /\/registrations$/ %>"><%= link_to "Registrations", event_registrations_path(@event) %></li>
+</ul>
