@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
+  layout "session"
+
   def new
+    @events = []
+    @user = User.new
   end
 
   def create

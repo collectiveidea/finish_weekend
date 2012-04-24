@@ -1,0 +1,22 @@
+<div class="well login-form">
+  <%= form_for @user, url: sessions_path(), html: { class: "form-horizontal" } do |form| %>
+    <div class="control-group">
+      <%= form.label :username, class: "control-label" %>
+      <div class="controls">
+        <%= form.text_field :username %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= form.label :password, class: "control-label" %>
+      <div class="controls">
+        <%= form.password_field :password %>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <%= form.submit "Sign In", class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

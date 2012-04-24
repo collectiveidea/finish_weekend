@@ -27,10 +27,17 @@ body.management {
 
   .wrapper {
     margin-top: 45px;
+  }
 
-    footer {
-      position: absolute;
-      bottom: 0;
-    }
+  .login-form {
+    width: 400px;
+    margin: auto auto;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 960px;
+    background-color: transparent;
   }
 }
