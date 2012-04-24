@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     current_event ||= Event.where("starts_at > :today", :today => Date.current).first
   end
 
+  def authenticate!
+    redirect_to new_session_path unless session[:user] && session[:user][:valid] == true
+  end
+
   private
 
   def find_future_events
