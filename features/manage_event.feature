@@ -13,3 +13,10 @@ Feature: managing an event
       | Description | Initial event   |
     And I press "Update"
     Then I should see "Updated Successfully"
+
+  Scenario: Name can't be blank
+    Given I am on the management page
+    And I follow "Test" within the event list
+    When I fill in "Name" with ""
+    And I press "Update"
+    Then I should see errors
