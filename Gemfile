@@ -14,6 +14,7 @@ gem "jquery-rails", "~> 2.0.1"
 gem "stripe", "~> 1.6.2"
 gem "gravtastic"
 gem "figaro"
+gem "bcrypt-ruby", :require => "bcrypt"
 
 group :development, :test do
   gem "cucumber-rails", "~> 1.3", require: false
