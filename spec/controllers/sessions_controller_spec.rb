@@ -27,7 +27,7 @@ describe SessionsController do
         end
 
         it "should redirect back to the login page" do
-          response.should redirect_to(new_session_path)
+          response.should redirect_to(new_sessions_path)
         end
 
         it "should not set the session" do
@@ -43,7 +43,7 @@ describe SessionsController do
       end
 
       it "should redirect back to the login page" do
-        response.should redirect_to(new_session_path)
+        response.should redirect_to(new_sessions_path)
       end
 
       it "should not set the session" do

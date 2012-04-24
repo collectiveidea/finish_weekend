@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       redirect_to manage_path
     else
       flash[:error] = "Username / Password was incorrect"
-      redirect_to new_session_path
+      redirect_to new_sessions_path
     end
   end
 

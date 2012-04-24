@@ -8,7 +8,7 @@ FinishWeekend::Application.routes.draw do
     end
   end
 
-  resources :session, only: [:new, :create, :destroy]
+  resource :sessions, only: [:new, :create, :destroy]
 
   scope "/manage" do
     get  "/",              to: "manage#index",   as: "manage"

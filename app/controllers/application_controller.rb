@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate!
-    redirect_to new_session_path unless session[:user] && session[:user][:valid] == true
+    redirect_to new_sessions_path unless session[:user] && session[:user][:valid] == true
   end
 
   private
