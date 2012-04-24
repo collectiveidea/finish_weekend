@@ -16,6 +16,8 @@ class ManageController < ApplicationController
       flash[:notice] = "Updated Successfully"
     end
     redirect_to :action => :show
+  def coupons
+
   end
 
   private
