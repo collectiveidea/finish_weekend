@@ -23,4 +23,5 @@ group :development, :test do
   gem "pry", "~> 0.9"
   gem "rspec-rails", "~> 2.8"
   gem "timecop", "~> 0.3"
+  gem "guard-rspec"
 end
