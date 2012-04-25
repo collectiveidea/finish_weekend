@@ -10,12 +10,9 @@ FinishWeekend::Application.routes.draw do
 
   resource :sessions, only: [:new, :create, :destroy]
 
-  scope "/manage" do
-    get  "/",              to: "manage#index",   as: "manage"
-    get  "/:slug",         to: "manage#show",    as: "event_manage"
-    put  "/:slug",         to: "manage#update",  as: "event_manage" 
-    get  "/:slug/coupons", to: "manage#coupons", as: "event_coupon"
+  namespace :manage do
+    resources :events do
+    end
   end
-
   root to: "home#index"
 end

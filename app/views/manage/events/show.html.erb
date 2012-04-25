@@ -1,5 +1,5 @@
-<%= render "navigation" %>
-<%= form_for @event, :url => event_manage_path(@event), :html => {:class => "form-horizontal"} do |form| %>
+<%= render "manage/navigation" %>
+<%= form_for @event, url: manage_event_path(@event), html: { class: 'form-horizontal' } do |form| %>
   <div class="control-group">
     <%= form.label :name, :class => "control-label" %>
     <div class="controls">
