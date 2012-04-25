@@ -6,6 +6,7 @@
 chromedriver.log
 config/application.yml
 config/database.yml
+coverage/
 log/*.log
 tmp
 
