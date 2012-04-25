@@ -1,0 +1,13 @@
+<%= render 'manage/navigation' %>
+
+<ul id='registrant-list' >
+  <% @event.registrations.each do |registrant| %>
+    <li>
+      <div class='btn-group pull-right'>
+        <%= link_to 'Edit', '#', class: 'btn' %>
+        <%= link_to 'Delete', manage_event_registration_path(@event, registrant), method: :delete, class: 'btn btn-danger' %>
+      </div>
+      <%= registrant.name %>
+    </li>
+  <% end %>
+</ul>

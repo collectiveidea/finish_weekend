@@ -1,5 +1,4 @@
 FinishWeekend::Application.routes.draw do
-  
   get "/faq", :to => "home#faq"
 
   resources :events, only: [:index, :show] do
@@ -14,7 +13,9 @@ FinishWeekend::Application.routes.draw do
     get "/", to: "events#index"
     resources :events do
       resources :coupons
+      resources :registrations
     end
   end
+  
   root to: "home#index"
 end
