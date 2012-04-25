@@ -17,6 +17,7 @@ gem "figaro"
 gem "heroku"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "carrierwave"
+gem "fog"
 
 group :development, :test do
   gem "cucumber-rails", "~> 1.3", require: false
