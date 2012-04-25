@@ -49,7 +49,12 @@
       <%= form.text_field :capacity %>
     </div>
   </div>
-
+  <div class="control-group">
+    <%= form.label :image, :class => "control-label" %>
+    <div class="controls">
+      <%= form.file_field :image %>
+    </div>
+  </div>
   <div class="control-group">
     <div class="controls">
       <%= form.submit "Update", :class => "btn btn-primary" %>

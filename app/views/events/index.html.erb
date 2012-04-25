@@ -3,7 +3,7 @@
 <ul class="event-list">
 <% @upcoming_events.each do |event| %>
   <li>
-    <img src="">
+    <%= image_tag event.image.url %>
     <%= link_to "Register", new_event_registration_path(event) %>
     <h3><%= event.name %></h3>
     <%= event.starts_at.strftime("%B %d") %> – <%= event.ends_at.strftime("%d") %> 
@@ -16,7 +16,7 @@
 <ul class="event-list">
 <% @previous_events.each do |event| %>
   <li>
-    <img src="">
+    <%= image_tag event.image.url %>
     <h3><%= event.name %></h3>
     <%= event.starts_at.strftime("%B %d") %> – <%= event.ends_at.strftime("%d") %> 
   </li>

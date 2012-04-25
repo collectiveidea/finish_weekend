@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
   has_many :registrations, dependent: :restrict
   has_many :sponsors
   has_many :coupons
