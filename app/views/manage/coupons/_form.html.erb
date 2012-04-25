@@ -1,0 +1,18 @@
+<div class="control-group">
+  <%= form.label :code, class: "control-label" %>
+  <div class="controls">
+    <%= form.text_field :code %>
+  </div>
+</div>
+<div class="control-group">
+  <%= form.label :amount, class: "control-label" %>
+  <div class="controls">
+    <%= form.text_field :amount %>
+    <p>(in dollars)</p>
+  </div>
+</div>
+<div class="control-group">
+  <div class="controls">
+    <%= form.submit "Save", class: 'btn btn-primary' %>
+  </div>
+</div>

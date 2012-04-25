@@ -4,19 +4,25 @@ body.management {
   height: 100%;
   background-image: none;
 
+  ul {
+    list-style: none;
+  }
+
 
   #event-list {
-    float: left;
     width: 200px;
   }
 
   #event-info {
-    float: left;
     width: 730px;
     margin: 0 5px;
+  }
 
-    input[type=submit] {
-      margin-left: 160px;
+  #coupon-list, #registrant-list {
+    li {
+      margin-top: 7px;
+      border-bottom: 1px solid #ddd;
+      line-height: 35px;
     }
   }
 

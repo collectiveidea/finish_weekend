@@ -11,7 +11,9 @@ FinishWeekend::Application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
 
   namespace :manage do
+    get "/", to: "events#index"
     resources :events do
+      resources :coupons
     end
   end
   root to: "home#index"

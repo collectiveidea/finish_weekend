@@ -1,0 +1,5 @@
+<%= render "manage/navigation" %>
+
+<%= form_for @coupon, url: manage_event_coupons_path(@event), html: { class: 'form-horizontal' } do |form| %>
+  <%= render 'form', form: form %>
+<% end %>

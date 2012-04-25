@@ -39,16 +39,16 @@
       <% end %>
     </section>
 
-    <aside id="event-list">
+    <aside id="event-list" class="pull-left">
       <ul class="nav nav-pills nav-stacked">
         <% @events.each do |event| %>
           <li class="<%= "active" if @event.slug == event.slug %>">
-            <%= link_to event.name, event_manage_path(event) %>
+            <%= link_to event.name, manage_event_path(event) %>
           </li> 
         <% end %>
       </ul>
     </aside>
-    <section id="event-info">
+    <section id="event-info" class="pull-left">
       <%= yield %>
     </section>
     <footer>
