@@ -3,8 +3,6 @@
     <h2>About</h2>
   </header>
         
-  <p class="section-description">We've all heard of startup weekends. Many of us have participated in one. Coming up with a new idea is easy, so is getting started. Finishing is hard. Finish Weekend helps you get it done. Come finish those projects you've put off to the side. Maybe you just need a bit of web help, a logo, or some code written. <span>We'll help you finish.</span></p>
-        
   <div class="two-col" id="right">
     <h3 class="sub-section-title">Finish Weekend MVPs</h3>
     <p>Finished! Check out the projects below that have been launched during @finishweekend.</p>
@@ -30,25 +28,19 @@
         
   <p class="section-description">Supporting Finish Weekend</p>
         
-  <div class="three-col" id="right">
-    <img src="<%= asset_path "img-hold.png" %>" alt="" height="150" width="200">
+  <div class="one-col">
+    <ul id="primary-sponsors">
+      <% @current_event.sponsors.partner.each do |sponsor| %>
+        <li><%= image_tag sponsor.image.url, height: 150, width: 200 %></li>
+      <% end %>
+    </ul>
   </div>
-        
-  <div class="three-col" id="center">
-    <img src="<%= asset_path "img-hold.png" %>" alt="" height="150" width="200">
-  </div>
-        
-  <div class="three-col" id="left">
-    <img src="<%= asset_path "img-hold.png" %>" alt="" height="150" width="200">
-  </div>
-        
+  
   <div class="one-col">
     <ul id="secondary-sponsors">
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
-    <li><img src="<%= asset_path "img-hold.png" %>" alt="" height="75" width="110"></li>
+      <% @current_event.sponsors.event.each do |sponsor| %>
+        <li><%= image_tag sponsor.image.url, height: 75, width: 110 %></li>
+      <% end %>
     </ul>
   </div>
         

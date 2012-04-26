@@ -14,6 +14,7 @@ FinishWeekend::Application.routes.draw do
     resources :events do
       resources :coupons
       resources :registrations
+      resources :sponsors
     end
   end
   

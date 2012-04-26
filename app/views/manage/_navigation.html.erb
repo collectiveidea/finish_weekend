@@ -2,4 +2,5 @@
   <li class="<%= "active" if request.fullpath =~ /\/manage\/events\/([\w-]+)$/ %>"><%= link_to "Event Info", manage_event_path(@event) %></li>
   <li class="<%= "active" if request.fullpath =~ /\/coupons$/ %>"><%= link_to "Coupons", manage_event_coupons_path(@event) %></li>
   <li class="<%= "active" if request.fullpath =~ /\/registrations$/ %>"><%= link_to "Registrations", manage_event_registrations_path(@event) %></li>
+  <li class="<%= "active" if request.fullpath =~ /\/sponsors$/ %>"><%= link_to "Sponsors", manage_event_sponsors_path(@event) %></li>
 </ul>

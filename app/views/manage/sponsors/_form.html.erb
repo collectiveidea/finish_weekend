@@ -1,0 +1,29 @@
+<div class="control-group">
+  <%= form.label :name, class: 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :name %>
+  </div>
+</div>
+<div class="control-group">
+  <%= form.label :url, class: 'control-label' %>
+  <div class="controls">
+    <%= form.text_field :url %>
+  </div>
+</div>
+<div class="control-group">
+  <%= form.label :level, class: 'control-label' %>
+  <div class="controls">
+    <%= form.select :level, Sponsor::SPONSOR_LEVELS %>
+  </div>
+</div>
+<div class="control-group">
+  <%= form.label :image, class: 'control-label' %>
+  <div class="controls">
+    <%= form.file_field :image %>
+  </div>
+</div>
+<div class="control-group">
+  <div class="controls">
+    <%= form.submit "Save", class: 'btn btn-primary' %>
+  </div>
+</div>
