@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Finish Weekend: Managment</title>
-  <%= stylesheet_link_tag "application", media: "all" %>
-  <%= content_for :stylesheets %>
-  <%= javascript_include_tag "application" %>
-  <%= content_for :javascripts %>
-  <%= csrf_meta_tags %>
-  <%= content_for :meta %>
-  
-  <!--[if IE]>
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  
-  <link href='http://fonts.googleapis.com/css?family=Convergence|Patua+One' rel='stylesheet' type='text/css'>
-</head>
-<body class="management">
-  <header>
+  <head>
+    <title>Finish Weekend: Managment</title>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= content_for :stylesheets %>
+    <%= javascript_include_tag "application" %>
+    <%= content_for :javascripts %>
+    <%= csrf_meta_tags %>
+    <%= content_for :meta %>
+
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=Convergence|Patua+One' rel='stylesheet' type='text/css'>
+  </head>
+  <body class="management">
+    <header>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -27,33 +27,34 @@
         </div>
       </div>
     </div>
-  </header>
-  
-  <section class="container wrapper">
+    </header>
+
+    <section class="container wrapper">
     <section id="flash">
-      <% if flash[:notice] %>
-        <p class="alert alert-success"><%= flash[:notice] %></p>
-      <% end %>
-      <% if flash[:error] %>
-        <p class="alert alert-error"><%= flash[:error] %></p>
-      <% end %>
+    <% if flash[:notice] %>
+      <p class="alert alert-success"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:error] %>
+      <p class="alert alert-error"><%= flash[:error] %></p>
+    <% end %>
     </section>
 
     <aside id="event-list" class="pull-left">
-      <ul class="nav nav-pills nav-stacked">
-        <% @events.each do |event| %>
-          <li class="<%= "active" if @event.slug == event.slug %>">
-            <%= link_to event.name, manage_event_path(event) %>
-          </li> 
-        <% end %>
-      </ul>
+    <%= link_to "New Event", new_manage_event_path, class: 'btn' %>
+    <ul class="nav nav-pills nav-stacked">
+      <% @events.each do |event| %>
+        <li class="<%= "active" if @event.slug == event.slug %>">
+        <%= link_to event.name, manage_event_path(event) %>
+        </li> 
+      <% end %>
+    </ul>
     </aside>
     <section id="event-info" class="pull-left">
-      <%= yield %>
+    <%= yield %>
     </section>
     <footer>
-      © 2011 – 2012 Collective Idea
+    © 2011 – 2012 Collective Idea
     </footer>
-  </section>
-</body>
+    </section>
+  </body>
 </html>
