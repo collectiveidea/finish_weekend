@@ -30,3 +30,7 @@ group :development, :test do
   gem "guard-rspec"
   gem "simplecov", require: false
 end
+
+group :production do
+  gem 'thin'
+end
