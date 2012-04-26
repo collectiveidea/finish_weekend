@@ -1,0 +1,16 @@
+<div class="one-col">
+  <ul id="primary-sponsors">
+    <% @current_event.sponsors.partner.each do |sponsor| %>
+      <li><%= image_tag sponsor.image.url, height: 150, width: 200 %></li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="one-col">
+  <ul id="secondary-sponsors">
+    <% @current_event.sponsors.event.each do |sponsor| %>
+      <li><%= image_tag sponsor.image.url, height: 75, width: 110 %></li>
+    <% end %>
+  </ul>
+</div>
+

@@ -1,15 +1,99 @@
-<header>
-  <h1><%= event_title(@event) %></h1>
-  <h2><%= event_dates(@event) %></h2>
-  <h3><%= @event.city %>, <%= @event.state %></h3>
-</header>
-<section>
+<article>
   <header>
-    <h1>Attendees</h1>
+    <h2>About</h2>
   </header>
-  <ol>
-    <% @registrations.each do |registration| %>
-      <li><%= registration.name %></li>
-    <% end %>
-  </ol>
-</section>
+        
+  <div class="two-col" id="right">
+    <h3 class="sub-section-title">Finish Weekend MVPs</h3>
+    <p>Finished! Check out the projects below that have been launched during @finishweekend.</p>
+    <div id="slider">
+      <a href="#" id="prev">slider-prev</a>
+      <a href="#" id="next">slider-next</a>
+      <img src="http://placehold.it/300x200" alt="fw mvps" title="look at this!">
+    </div>
+  </div>
+        
+  <div class="two-col" id="left">
+    <h3 class="sub-section-title">Suggested Projects</h3>
+    <p>Something that can be released in a weekend. Not a final version, but something to get it in front of people. Maybe you've been coding up a killer app, but need help building a website to announce it. Maybe you have a nasty bug you need help with. Maybe you need some copy written. Maybe you just need a few hours of encouragement. We'll get your project polished up and ready to go.<br>Bring a project, and get ready to ship it!</p>
+  </div>
+        
+  <div class="clearfix"></div>
+</article><!-- #article -->
+
+<article>
+  <header>
+    <h2>Sponsors</h2>
+  </header>
+        
+  <p class="section-description">Supporting Finish Weekend</p>
+  <%= render 'events/sponsors' %> 
+  <div class="clearfix"></div>
+</article><!-- #article -->
+    
+<article>
+  <header>
+    <h2>People</h2>
+  </header>
+        
+  <p class="section-description">Your best buds will be there.</p>
+        
+  <div class="one-col">
+    <ul id="people-list">
+      <% @current_event.registrations.each do |person| %>
+        <li><%= image_tag person.gravatar_url(:secure => true, :size => 25, :rating => "PG", :default => "https://www.finishweekend.com/missing.jpg"), :title => person.name %></li>
+      <% end %>
+    </ul>
+  </div>
+        
+  <div class="clearfix"></div>
+</article><!-- #article -->
+    
+<article>
+  <header>
+    <h2>Schedule</h2>
+  </header>
+        
+  <p class="section-description">Productivity needs a plan.</p>
+        
+  <div class="three-col" id="right">
+    <h3 class="sub-section-title">Important Details</h3>
+    <p><strong>Sleeping/Lodging</strong>More information will be coming on other lodging...</p>
+    <p>We'll provide ample amounts of food, drink, and caffeine. There are also lots of restaurants within walking distance.</p>
+  </div>
+        
+  <div class="three-col" id="center">
+    <h3 class="sub-section-title">2nd Day</h3>
+    <p><strong>8:00</strong>Breakfast and refocus</p>
+    <p><strong>3:00</strong>Show and tell about what we finished</p>
+  </div>
+        
+  <div class="three-col" id="left">
+    <h3 class="sub-section-title">1st Day</h3>
+    <p><strong>8:00 – 8:45</strong>Coffee and donuts and getting setup</p>
+    <p><strong>8:45 – 9:00</strong>Official kickoff and announcements of what we intend to finish over the weekend</p>
+    <p><strong>12:00</strong>Food! Feed the brain</p>
+    <p><strong>6:00</strong>More food</p>
+  </div>
+        
+  <div class="clearfix"></div>
+</article><!-- #article -->
+
+<article>
+  <header>
+    <h2>Coming to:</h2>
+  </header>
+        
+  <p class="section-description">Heads up. Future @finishweekend events:</p>
+       
+       
+  <% @upcoming.each do |event| %>      
+    <div class="three-col" id="left">
+      <h3 class="sub-section-title"><%= link_to event.name, new_event_registration_path(event) %></h3>
+      <p><%= event.starts_at.strftime "%B" %></p>
+    </div>
+  <% end %>
+                
+  <div class="clearfix"></div>
+</article><!-- #article -->
+
