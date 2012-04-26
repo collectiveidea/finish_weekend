@@ -1,9 +1,8 @@
 class EventsController < ApplicationController
   respond_to :html
+  before_filter :find_upcoming_and_previous_events
 
   def index
-    @upcoming_events = Event.upcoming_events
-    @previous_events = Event.previous_events
     respond_with @events
   end
 
@@ -11,5 +10,12 @@ class EventsController < ApplicationController
     @event = Event.find_by_slug!(params[:id])
     @registrations = @event.registrations.visible
     respond_with @event
+  end
+
+  private
+
+  def find_upcoming_and_previous_events
+    @upcoming = Event.upcoming_events
+    @previous = Event.previous_events
   end
 end

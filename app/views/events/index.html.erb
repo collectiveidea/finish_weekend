@@ -1,7 +1,7 @@
-<% if @upcoming_events.present? %>
+<% if @upcoming.present? %>
 <h2>Upcoming Events</h2>
 <ul class="event-list">
-<% @upcoming_events.each do |event| %>
+<% @upcoming.each do |event| %>
   <li>
     <%= image_tag event.image.url %>
     <%= link_to "Register", new_event_registration_path(event) %>
@@ -14,7 +14,7 @@
 
 <h2>Previous Events</h2>
 <ul class="event-list">
-<% @previous_events.each do |event| %>
+<% @previous.each do |event| %>
   <li>
     <%= image_tag event.image.url %>
     <h3><%= event.name %></h3>
