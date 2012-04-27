@@ -1,0 +1,17 @@
+<article>
+  <header>
+    <h2>People</h2>
+  </header>
+        
+  <p class="section-description">Your best buds will be there.</p>
+        
+  <div class="one-col">
+    <ul id="people-list">
+      <% event.registrations.each do |person| %>
+        <li><%= image_tag person.gravatar_url(:secure => true, :size => 25, :rating => "PG", :default => "https://www.finishweekend.com/missing.jpg"), :title => person.name %></li>
+      <% end %>
+    </ul>
+  </div>
+        
+  <div class="clearfix"></div>
+</article><!-- #article -->
