@@ -8,7 +8,10 @@
   <div class="one-col">
     <ul id="people-list">
       <% event.registrations.each do |person| %>
-        <li><%= image_tag person.gravatar_url(:secure => true, :size => 25, :rating => "PG", :default => "https://www.finishweekend.com/missing.jpg"), :title => person.name %></li>
+        <li><%= image_tag person.gravatar_url(secure: true, size: 25, rating: 'PG', default: 'https://www.finishweekend.com/missing.jpg'), title: person.name %></li>
+      <% end %>
+      <% (event.capacity - event.registrations.count).times do |i| %>
+        <li><%= image_tag "img-hold.png", width: 25, height: 25, alt: '', title: '' %></li>
       <% end %>
     </ul>
   </div>
