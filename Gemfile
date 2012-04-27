@@ -19,6 +19,7 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem "carrierwave"
 gem "fog"
 
+
 group :development, :test do
   gem "cucumber-rails", "~> 1.3", require: false
   gem "database_cleaner", "~> 0.7"
@@ -33,4 +34,5 @@ end
 
 group :production do
   gem 'thin'
+  gem 'rack-canonical-host'
 end
