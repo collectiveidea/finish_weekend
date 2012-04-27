@@ -1,0 +1,18 @@
+<article>
+  <header>
+    <h2>Future Events</h2>
+  </header>
+        
+  <p class="section-description">Heads up. Future @finishweekend events:</p>
+
+  <ul class="upcoming-events">
+    <% events.each do |event| %>     
+      <li>
+        <h2><%= link_to event.name, event_path(event) %></h2>
+        <p><%= event.starts_at.strftime "%B %d" %>–<%= event.ends_at.strftime "%d" %>
+      </li>
+    <% end %>
+  </ul>
+                
+  <div class="clearfix"></div>
+</article><!-- #article -->

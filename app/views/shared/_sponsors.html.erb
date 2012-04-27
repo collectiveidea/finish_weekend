@@ -5,15 +5,11 @@
   <p class="section-description">Supporting Finish Weekend</p>
   <div class="one-col">
     <ul id="primary-sponsors">
-      <% event.sponsors.partner.each do |sponsor| %>
+      <% event.sponsors.premier.each do |sponsor| %>
         <li><a href="<%= sponsor.url %>"><%= image_tag sponsor.image.url, height: 150, width: 200 %></a></li>
       <% end %>
-    </ul>
-  </div>
-  <div class="one-col">
-    <ul id="secondary-sponsors">
       <% event.sponsors.event.each do |sponsor| %>
-        <li><a href="<%= sponsor.url%>"><%= image_tag sponsor.image.url, height: 75, width: 110 %></a></li>
+        <li><a href="<%= sponsor.url %>"><%= image_tag sponsor.image.url, height: 75, width: 100  %></a></li>
       <% end %>
     </ul>
   </div>

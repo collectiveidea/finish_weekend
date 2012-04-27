@@ -3,7 +3,7 @@
     <h2>About</h2>
   </header>
 
-  <p class="section-description">
+  <p class="section-description about">
   We've all heard of startup weekends. Many of us have participated in one. Coming up with a new idea is easy, so is getting started. Finishing is hard. Finish Weekend helps you get it done. Come finish those projects you've put off to the side. Maybe you just need a bit of web help, a logo, or some code written. <span>We'll help you finish.</span>
   </p>
 
@@ -17,24 +17,22 @@
   <div class="clearfix"></div>
 </article><!-- #article -->
 
+<article class="event">
+  <header>
+    <h2>Coming to</h2>
+  </header>
+  <h1>Finish Weekend <%= @current_event.name %></h1>
+  <h3>brought to you by</h3>
+  <div class='partners'>
+    <a href='http://collectiveidea.com'><%= image_tag "collectiveidea.png", height: 100, class: 'partner' %></a>
+    <% if @current_event.sponsors.partner.present? %>
+      <span class='plus'>+</span> 
+      <a href='<%= @current_event.sponsors.partner.url %>'><%= image_tag @current_event.sponsors.partner.image.url, height: 100, class: 'partner' %></a>
+    <% end %>
+  </div>
+</article>
 <%= render 'shared/sponsors', event: @current_event %>    
 <%= render 'shared/people', event: @current_event %>
 <%= render 'shared/schedule', event: @current_event %>
-
-<article>
-  <header>
-    <h2>Coming to:</h2>
-  </header>
-        
-  <p class="section-description">Heads up. Future @finishweekend events:</p>
-       
-  <% @upcoming.each do |event| %>      
-    <div class="three-col" id="left">
-      <h3 class="sub-section-title"><%= link_to event.name, new_event_registration_path(event) %></h3>
-      <p><%= event.starts_at.strftime "%B" %></p>
-    </div>
-  <% end %>
-                
-  <div class="clearfix"></div>
-</article><!-- #article -->
+<%= render 'shared/upcoming', events: @upcoming %>
 

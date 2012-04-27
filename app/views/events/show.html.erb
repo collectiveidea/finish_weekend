@@ -13,25 +13,21 @@
   <div class="clearfix"></div>
 </article><!-- #article -->
 
-<%= render 'shared/sponsors', event: @current_event %>
-<%= render 'shared/people', event: @current_event %>
-<%= render 'shared/schedule', event: @current_event %>
-
-<article>
+<article class="event">
   <header>
-    <h2>Coming to:</h2>
+    <h2>Coming to</h2>
   </header>
-        
-  <p class="section-description">Heads up. Future @finishweekend events:</p>
-       
-       
-  <% @upcoming.each do |event| %>      
-    <div class="three-col" id="left">
-      <h3 class="sub-section-title"><%= link_to event.name, new_event_registration_path(event) %></h3>
-      <p><%= event.starts_at.strftime "%B" %></p>
-    </div>
-  <% end %>
-                
-  <div class="clearfix"></div>
-</article><!-- #article -->
-
+  <h1>Finish Weekend <%= @event.name %></h1>
+  <h3>brought to you by</h3>
+  <div class='partners'>
+    <a href='http://collectiveidea.com'><%= image_tag "collectiveidea.png", height: 100, class: 'partner' %></a>
+    <% if @event.sponsors.partner.present? %>
+      <span class='plus'>+</span> 
+      <a href='<%= @event.sponsors.partner.url %>'><%= image_tag @event.sponsors.partner.image.url, height: 100, class: 'partner' %></a>
+    <% end %>
+  </div>
+</article>
+<%= render 'shared/sponsors', event: @event %>
+<%= render 'shared/people', event: @event %>
+<%= render 'shared/schedule', event: @event %>
+<%= render 'shared/upcoming', events: @upcoming %>
