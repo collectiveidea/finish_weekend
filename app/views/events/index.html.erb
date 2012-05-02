@@ -1,23 +1,23 @@
 <% if @upcoming.present? %>
-<h2>Upcoming Events</h2>
+<h2 class="event-list-heading">Upcoming Events</h2>
 <ul class="event-list">
 <% @upcoming.each do |event| %>
   <li>
     <%= image_tag event.image.url %>
-    <%= link_to "Register", new_event_registration_path(event) %>
-    <h3><%= event.name %></h3>
+    <%= link_to "Register", new_event_registration_path(event), class: 'btn' %>
+    <h3><%= link_to event.name, event_path(event) %></h3>
     <%= event.starts_at.strftime("%B %d") %> – <%= event.ends_at.strftime("%d") %> 
   </li>
 <% end %>
 </ul>
 <% end %>
 
-<h2>Previous Events</h2>
+<h2 class="event-list-heading">Previous Events</h2>
 <ul class="event-list">
 <% @previous.each do |event| %>
   <li>
     <%= image_tag event.image.url %>
-    <h3><%= event.name %></h3>
+    <h3><%= link_to event.name, event_path(event) %></h3>
     <%= event.starts_at.strftime("%B %d") %> – <%= event.ends_at.strftime("%d") %> 
   </li>
 <% end %>

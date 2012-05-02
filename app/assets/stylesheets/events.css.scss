@@ -1,4 +1,12 @@
+.event-list-heading {
+  margin-left: 120px;
+  color: #E28149;
+  font-size: 18px;
+  text-shadow: #B25319 1px 1px; 
+}
+
 .event-list {
+  margin: 0 120px 0 140px;
   list-style: none;
   li { 
     height: 85px; 
@@ -11,9 +19,9 @@
       margin: 5px;
     }
 
-    a {
+    .btn {
       float: right;
-      margin: 20px;
+      margin: 20px 0;
       padding: 5px 10px;
       border: 1px solid #1483A7;
       border-radius: 4px;
