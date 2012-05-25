@@ -2,12 +2,15 @@
   <header>
     <h2>Sponsors</h2>
   </header>
-  <p class="section-description">Supporting Finish Weekend</p>
   <div class="one-col">
+    <p class="section-description">Gold Sponsors</p>
     <ul id="primary-sponsors">
       <% event.sponsors.premier.each do |sponsor| %>
         <li><a href="<%= sponsor.url %>"><%= image_tag sponsor.image.url, height: 150, width: 200 %></a></li>
       <% end %>
+    </ul>
+    <p class="section-description">Event Sponsors</p>
+    <ul id="secondary-sponsors">
       <% event.sponsors.event.each do |sponsor| %>
         <li><a href="<%= sponsor.url %>"><%= image_tag sponsor.image.url, height: 75, width: 100  %></a></li>
       <% end %>
