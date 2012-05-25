@@ -9,10 +9,10 @@
     <h3 class="sub-section-title">Important Details</h3>
     <p>
       <strong>Sleeping/Lodging</strong>
-      <% if @current_event.additional_info && @current_event.additional_info.empty? %>
+      <% if @current_event.additional_info.nil? || @current_event.additional_info.empty? %>
         More information coming soon!
       <% else %>
-        <%= @current_event.additional_info %>
+        <%= raw @current_event.additional_info %>
       <% end %>
     </p>
     <p>We'll provide ample amounts of food, drink, and caffeine. There are also lots of restaurants within walking distance.</p>
