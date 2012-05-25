@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426135131) do
+ActiveRecord::Schema.define(:version => 20120525151932) do
 
   create_table "coupons", :force => true do |t|
     t.integer  "event_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20120426135131) do
     t.datetime "created_at",                                       :null => false
     t.datetime "updated_at",                                       :null => false
     t.string   "image"
+    t.string   "additional_info"
   end
 
   add_index "events", ["created_at"], :name => "index_events_on_created_at"
