@@ -9,7 +9,7 @@
     <h3 class="sub-section-title">Important Details</h3>
     <p>
       <strong>Sleeping/Lodging</strong>
-      <% if @current_event.additional_info.empty? %>
+      <% if @current_event.additional_info && @current_event.additional_info.empty? %>
         More information coming soon!
       <% else %>
         <%= @current_event.additional_info %>
