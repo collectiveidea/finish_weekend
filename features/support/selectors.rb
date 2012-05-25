@@ -7,6 +7,8 @@ module HtmlSelectorsHelpers
       "header:contains('#{$1}') + ol"
     when "the event list"
       "#event-list"
+    when "important details"
+      ".important-details"
     when /^"(.+)"$/
       $1
     else

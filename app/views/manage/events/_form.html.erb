@@ -54,6 +54,12 @@
   </div>
 </div>
 <div class="control-group">
+  <%= form.label :additional_info, "Additional Info", :class => "control-label" %>
+  <div class="controls">
+    <%= form.text_area :additional_info %>
+  </div>
+</div>
+<div class="control-group">
   <%= form.label :image, :class => "control-label" %>
   <div class="controls">
     <%= form.file_field :image %>

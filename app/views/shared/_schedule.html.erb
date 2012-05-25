@@ -5,9 +5,16 @@
         
   <p class="section-description">Productivity needs a plan.</p>
         
-  <div class="three-col" id="right">
+  <div class="three-col important-details" id="right">
     <h3 class="sub-section-title">Important Details</h3>
-    <p><strong>Sleeping/Lodging</strong>More information will be coming on other lodging...</p>
+    <p>
+      <strong>Sleeping/Lodging</strong>
+      <% if @current_event.additional_info.empty? %>
+        More information coming soon!
+      <% else %>
+        <%= @current_event.additional_info %>
+      <% end %>
+    </p>
     <p>We'll provide ample amounts of food, drink, and caffeine. There are also lots of restaurants within walking distance.</p>
   </div>
         
