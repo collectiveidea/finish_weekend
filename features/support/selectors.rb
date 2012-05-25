@@ -3,8 +3,14 @@ module HtmlSelectorsHelpers
     case locator
     when "the page"
       "html > body"
+    when "the navigation menu"
+      "#navigation"
     when /^the "(.*?)" list$/
       "header:contains('#{$1}') + ol"
+    when "the upcoming events list"
+      "#upcoming-events"
+    when "the previous events list"
+      "#previous-events"
     when "the event list"
       "#event-list"
     when "important details"
