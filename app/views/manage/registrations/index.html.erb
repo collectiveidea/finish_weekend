@@ -7,7 +7,7 @@
         <%= link_to 'Edit', '#', class: 'btn' %>
         <%= link_to 'Delete', manage_event_registration_path(@event, registrant), method: :delete, class: 'btn btn-danger' %>
       </div>
-      <%= image_tag registrant.gravatar_url(secure: true, size: 30, rating: 'PG', default: 'https://www.finishweekend.com/missing.jpg'), title: registrant.name %>
+      <%= image_tag registrant.gravatar_url(secure: true, size: 30, rating: 'PG', default: 'https://www.finishweekend.com/missing.jpg'), title: registrant.name, width: 30, height: 30 %>
       <%= registrant.name %>
       <span class="email"><%= registrant.email %></span>
     </li>

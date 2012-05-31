@@ -26,9 +26,16 @@ body.management {
     }
   }
 
-  #registrant-list .email {
-    color: #999;
-    font-size: 12px;
+  #registrant-list {
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .email {
+      color: #999;
+      font-size: 12px;
+    }
   }
 
   .container {
