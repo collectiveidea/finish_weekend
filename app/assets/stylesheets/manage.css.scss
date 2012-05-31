@@ -32,7 +32,21 @@ body.management {
       height: 30px;
     }
     
+    span {
+      display: inline-block;
+    }
+
     .email {
+      width: 225px;
+      color: #999;
+      font-size: 12px;
+    }
+
+    .name {
+      width: 225px;
+    }
+
+    .tshirt {
       color: #999;
       font-size: 12px;
     }

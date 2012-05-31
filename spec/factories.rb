@@ -23,6 +23,7 @@ FactoryGirl.define do
     last_name{ Faker::Name.last_name }
     email{|r| Faker::Internet.free_email("#{r.first_name} #{r.last_name}") }
     shirt_size{ Registration::SHIRT_SIZES.sample }
+    stripe_token "FAKE-TOKEN"
   end
 
   factory :twitter_registration, parent: :registration do
