@@ -12,7 +12,7 @@
       <% if @current_event.additional_info.nil? || @current_event.additional_info.empty? %>
         More information coming soon!
       <% else %>
-        <%= raw @current_event.additional_info %>
+        <%= raw RedCloth.new(@current_event.additional_info).to_html %>
       <% end %>
     </p>
     <p>We'll provide ample amounts of food, drink, and caffeine. There are also lots of restaurants within walking distance.</p>

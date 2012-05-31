@@ -18,6 +18,7 @@ gem "heroku"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "carrierwave"
 gem "fog"
+gem "RedCloth"
 
 
 group :development, :test do
