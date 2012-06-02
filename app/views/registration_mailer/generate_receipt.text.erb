@@ -1,0 +1,10 @@
+Thanks for registering, <%= @registration.name %>!
+===============================================================
+
+We'll see you on <%= @event.starts_at.strftime('%B') %> <%= @event.starts_at.day.ordinalize %> and <% unless @event.starts_at.month == @event.ends_at.month %><%= @event.ends_at.strftime('%B') %> <% end %><%= @event.ends_at.day.ordinalize %>!
+
+<% day_before = @event.starts_at - 1 %>We'll be sending out more information as we get closer. We'll also plan on hanging out and grabbing drinks the evening of <%= day_before.strftime('%A') %> the <%= day_before.day.ordinalize %>!
+
+See you then!
+
+-The Finish Weekend Team

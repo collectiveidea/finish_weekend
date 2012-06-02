@@ -25,6 +25,7 @@ Feature: Registration
     And I should be on the "Boston" event page
     And I should see "Steve Richert" within the "Attendees" list
     And $30.00 should have been charged
+    And an email should have been sent to "steve.richert@gmail.com"
 
   Scenario: Hidden registration
     Given I am on the "Boston" registration page
@@ -43,6 +44,7 @@ Feature: Registration
     And I should be on the "Boston" event page
     And I should not see "Steve Richert" within the "Attendees" list
     And $30.00 should have been charged
+    And an email should have been sent to "steve.richert@gmail.com"
 
   Scenario: Missing first name
     Given I am on the "Boston" registration page

@@ -13,6 +13,7 @@ class RegistrationsController < ApplicationController
     @registration = @event.registrations.create(params[:registration])
     if @registration.persisted?
       flash[:notice] = t("flash.registration_created")
+      RegistrationMailer.generate_receipt(@event, @registration).deliver
     else
       flash.now[:error] = t("flash.registration_error")
     end
