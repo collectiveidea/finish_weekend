@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :find_future_events, :find_current_event, :find_event_by_slug
 
   def current_event
-    current_event ||= Event.order("starts_at DESC").first
+    current_event ||= Event.where("starts_at > :today", :today => Date.current).first || Event.by_date.first
   end
 
   def authenticate!

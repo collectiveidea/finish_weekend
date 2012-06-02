@@ -18,9 +18,9 @@ describe ApplicationController do
       @target.current_event.name.should == "Boston"
     end
 
-    it "should return nil" do
+    it "should the last event if no future events" do
       Timecop.freeze(Date.parse("2012-04-01"))
-      @target.current_event.should be_nil
+      @target.current_event.name.should == "Boston"
     end
   end
 end
