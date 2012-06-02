@@ -23,7 +23,7 @@ Feature: Registration
     And I wait for payment processing
     Then I should see "Thank you"
     And I should be on the "Boston" event page
-    And I should see "Steve Richert" within the "Attendees" list
+    And I should see "Steve Richert" registered for the event
     And $30.00 should have been charged
     And an email should have been sent to "steve.richert@gmail.com"
 
@@ -42,7 +42,7 @@ Feature: Registration
     And I wait for payment processing
     Then I should see "Thank you"
     And I should be on the "Boston" event page
-    And I should not see "Steve Richert" within the "Attendees" list
+    And I should not see "Steve Richert" registered for the event
     And $30.00 should have been charged
     And an email should have been sent to "steve.richert@gmail.com"
 
