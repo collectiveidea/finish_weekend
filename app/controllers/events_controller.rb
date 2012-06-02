@@ -16,6 +16,7 @@ class EventsController < ApplicationController
 
   def find_upcoming_and_previous_events
     @upcoming = Event.upcoming_events
+    @current = Event.current_events
     @previous = Event.previous_events
   end
 end

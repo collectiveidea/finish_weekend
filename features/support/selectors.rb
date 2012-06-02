@@ -9,6 +9,8 @@ module HtmlSelectorsHelpers
       "header:contains('#{$1}') + ol"
     when "the upcoming events list"
       "#upcoming-events"
+    when "the current events list"
+      "#current-events"
     when "the previous events list"
       "#previous-events"
     when "the event list"

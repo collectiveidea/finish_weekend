@@ -9,6 +9,7 @@ class Event < ActiveRecord::Base
   before_create :set_slug
 
   scope :upcoming_events, where("starts_at > :date", :date => Date.current).order(:starts_at)
+  scope :current_events, where("starts_at <= :date AND ends_at >= :date", :date => Date.current).order(:starts_at)
   scope :previous_events, where("ends_at < :date", :date => Date.current).order("starts_at DESC")
   scope :by_date, order("starts_at DESC")
 

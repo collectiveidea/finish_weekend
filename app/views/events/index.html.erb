@@ -12,6 +12,20 @@
 </ul>
 <% end %>
 
+<% if @current.present? %>
+<h2 class="event-list-heading">Current Events</h2>
+<ul class="event-list" id="current-events">
+<% @current.each do |event| %>
+  <li>
+    <%= image_tag event.image.url %>
+    <%= link_to "Register", new_event_registration_path(event), class: 'btn' %>
+    <h3><%= link_to event.name, event_path(event) %></h3>
+    <%= event.starts_at.strftime("%B %d") %> – <%= event.ends_at.strftime("%d") %> 
+  </li>
+<% end %>
+</ul>
+<% end %>
+
 <h2 class="event-list-heading">Previous Events</h2>
 <ul class="event-list" id="previous-events">
 <% @previous.each do |event| %>
