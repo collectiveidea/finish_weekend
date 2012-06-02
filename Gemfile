@@ -19,7 +19,7 @@ gem "bcrypt-ruby", :require => "bcrypt"
 gem "carrierwave"
 gem "fog"
 gem "RedCloth"
-
+gem "sendgrid"
 
 group :development, :test do
   gem "cucumber-rails", "~> 1.3", require: false
