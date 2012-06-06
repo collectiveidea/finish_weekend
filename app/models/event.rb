@@ -8,10 +8,19 @@ class Event < ActiveRecord::Base
 
   before_create :set_slug
 
-  scope :upcoming_events, where("starts_at > :date", :date => Date.current).order(:starts_at)
-  scope :current_events, where("starts_at <= :date AND ends_at >= :date", :date => Date.current).order(:starts_at)
-  scope :previous_events, where("ends_at < :date", :date => Date.current).order("starts_at DESC")
   scope :by_date, order("starts_at DESC")
+
+  def self.upcoming_events(date = Date.current)
+    where("starts_at > :date", :date => date).order(:starts_at)
+  end
+
+  def self.current_events(date = Date.current)
+    where("starts_at <= :date AND ends_at >= :date", :date => date).order(:starts_at)
+  end
+
+  def self.previous_events(date = Date.current)
+    where("ends_at < :date", :date => date).order("starts_at DESC")
+  end
 
   def to_param
     slug
