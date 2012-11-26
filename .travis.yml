@@ -1,8 +1,16 @@
+language: ruby
 rvm:
   - 1.9.3
+before_install:
+  - gem install bundler
+bundler_args: --without production
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
 notifications:
-  email:
-    - tim@collectiveidea.com
   webhooks:
-    urls: http://www.postbin.org/n026i0
+    urls:
+      - http://buildlight.collectiveidea.com/
     on_start: true
+services:
+  - mongodb
