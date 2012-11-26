@@ -14,5 +14,3 @@ notifications:
     urls:
       - http://buildlight.collectiveidea.com/
     on_start: true
-services:
-  - mongodb
