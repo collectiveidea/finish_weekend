@@ -5,6 +5,7 @@ before_install:
   - gem install bundler
 bundler_args: --without production
 before_script:
+  - cp config/application.example.yml config/application.yml
   - cp config/database.example.yml config/database.yml
   - rake db:create:all db:schema:load
   - "export DISPLAY=:99.0"
