@@ -36,6 +36,6 @@ group :development, :test do
 end
 
 group :production do
-  gem 'thin'
+  gem 'unicorn'
   gem 'rack-canonical-host'
 end
