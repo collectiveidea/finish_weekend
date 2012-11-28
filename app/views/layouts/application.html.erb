@@ -50,7 +50,7 @@
         
       <article id="event">
         <div id="location">
-          <%= image_tag @current_event.image.url, width: 280, height: 123 %>
+          <%= image_tag @current_event.image.url, width: 280, height: 123 if @current_event.image? %>
           <a id="register" href="<%= new_event_registration_path @current_event %>"><h1>Register</h1></a>
         </div>
         <div id="info">

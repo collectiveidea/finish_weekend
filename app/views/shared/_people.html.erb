@@ -14,8 +14,10 @@
           <li><%= image_tag 'https://www.finishweekend.com/missing.jpg', width: 25, height: 25, title: 'Anonymous' %></li>
         <% end %>
       <% end %>
-      <% (event.capacity - event.registrations.count).times do |i| %>
-        <li><%= image_tag "img-hold.png", width: 25, height: 25, alt: '', title: '' %></li>
+      <% if event.capacity? %>
+        <% (event.capacity - event.registrations.count).times do |i| %>
+          <li><%= image_tag "img-hold.png", width: 25, height: 25, alt: '', title: '' %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>
