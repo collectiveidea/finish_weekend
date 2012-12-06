@@ -24,6 +24,7 @@ gem "RedCloth"
 gem "sendgrid"
 
 group :development, :test do
+  gem "capybara", "~> 1.1.0"
   gem "cucumber-rails", require: false
   gem "database_cleaner"
   gem "factory_girl_rails", "~> 1.7"
@@ -34,6 +35,7 @@ group :development, :test do
   gem "guard-rspec"
   gem "simplecov", require: false
   gem "thin"
+  gem "poltergeist"
 end
 
 group :production do
