@@ -1,4 +1,4 @@
-ruby "1.9.3"
+ruby "2.0.0"
 
 source "https://rubygems.org"
 
@@ -17,6 +17,7 @@ gem "stripe", "~> 1.6.2"
 gem "gravtastic"
 gem "figaro"
 gem "heroku"
+gem "honeybadger"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "carrierwave"
 gem "fog"
