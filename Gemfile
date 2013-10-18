@@ -34,9 +34,12 @@ group :development, :test do
   gem "rspec-rails", "~> 2.8"
   gem "timecop", "~> 0.3"
   gem "guard-rspec"
-  gem "simplecov", require: false
   gem "thin"
   gem "poltergeist"
+end
+
+group :test do
+  gem "codeclimate-test-reporter", require: false
 end
 
 group :production do

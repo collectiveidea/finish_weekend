@@ -1,16 +1,19 @@
 language: ruby
 rvm:
-  - 2.0.0
+- 2.0.0
 before_install:
-  - gem install bundler
+- gem install bundler
 before_script:
-  - cp config/application.example.yml config/application.yml
-  - cp config/database.example.yml config/database.yml
-  - rake db:create:all db:schema:load
+- cp config/application.example.yml config/application.yml
+- cp config/database.example.yml config/database.yml
+- rake db:create:all db:schema:load
 script: xvfb-run rake
 notifications:
   webhooks:
     urls:
-      - http://buildlight.collectiveidea.com/
+    - http://buildlight.collectiveidea.com/
     on_start: true
 cache: bundler
+env:
+  global:
+    secure: p8mlFLeBXMRNyUQ3nYVCF52YVycS/Vd2RglNsdDAsGiaQsYPo8UXKa2SjOJ1rQzLgTR2ySLsuW/bIePkZkWA50QhjXKgA0VhLzWluFDhQKAy5qjhELamM7TvyO36jyNI22GPBpuoOv4sSPIf+qLZgwte9s6tndmlf4M20W4Pxcw=

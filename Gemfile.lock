@@ -45,6 +45,8 @@ GEM
       activesupport (>= 3.2.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
+    codeclimate-test-reporter (0.1.1)
+      simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.0.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -210,10 +212,10 @@ GEM
     sendgrid (1.0.1)
       json
       json
-    simplecov (0.6.4)
+    simplecov (0.7.1)
       multi_json (~> 1.0)
-      simplecov-html (~> 0.5.3)
-    simplecov-html (0.5.3)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
     slop (2.4.4)
     sprockets (2.2.2)
       hike (~> 1.2)
@@ -252,6 +254,7 @@ DEPENDENCIES
   bcrypt-ruby
   capybara (~> 1.1.0)
   carrierwave
+  codeclimate-test-reporter
   coffee-rails (~> 3.2.2)
   cucumber-rails
   database_cleaner
@@ -273,7 +276,6 @@ DEPENDENCIES
   rspec-rails (~> 2.8)
   sass-rails (~> 3.2.4)
   sendgrid
-  simplecov
   stripe (~> 1.6.2)
   thin
   timecop (~> 0.3)
