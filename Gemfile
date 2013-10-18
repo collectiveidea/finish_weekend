@@ -42,4 +42,5 @@ end
 group :production do
   gem 'unicorn'
   gem 'rack-canonical-host'
+  gem 'rails_12factor'
 end
