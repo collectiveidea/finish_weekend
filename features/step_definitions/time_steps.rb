@@ -11,5 +11,5 @@ When /^I wait (\d+) seconds?$/ do |count|
 end
 
 When /^I wait for payment processing$/ do
-  sleep 2
+  sleep 4
 end
