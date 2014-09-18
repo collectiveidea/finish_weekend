@@ -6,8 +6,8 @@ before_install:
 before_script:
 - cp config/application.example.yml config/application.yml
 - cp config/database.example.yml config/database.yml
-- rake db:create:all db:schema:load
-script: xvfb-run rake
+- bundle exec rake db:create:all db:schema:load
+script: xvfb-run bundle exec rake
 notifications:
   webhooks:
     urls:
