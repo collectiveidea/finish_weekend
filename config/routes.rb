@@ -18,6 +18,8 @@ FinishWeekend::Application.routes.draw do
       resources :sponsors
     end
   end
-  
+
+  get '/.well-known/acme-challenge/:id' => 'home#letsencrypt'
+
   root to: "home#index"
 end

@@ -8,4 +8,9 @@ class HomeController < ApplicationController
 
   def sponsors
   end
+
+  def letsencrypt
+    # use your code here, not mine
+    render text: ENV["LETS_ENCRYPT_CHALLENGE"]
+  end
 end
