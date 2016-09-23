@@ -20,7 +20,7 @@ gem "heroku"
 gem "honeybadger"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "carrierwave"
-gem "fog"
+gem "fog-aws"
 gem "RedCloth"
 gem "sendgrid"
 
