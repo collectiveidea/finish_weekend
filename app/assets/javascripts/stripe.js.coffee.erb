@@ -1,6 +1,6 @@
 $ ->
   if $("meta[name=stripe-key]").length
-    $.getScript "https://js.stripe.com/v1/", (_, status) ->
+    $.getScript "https://js.stripe.com/v2/", (_, status) ->
       if status == "success"
         Stripe.setPublishableKey $("meta[name=stripe-key]").attr("content")
         stripe.setup()
