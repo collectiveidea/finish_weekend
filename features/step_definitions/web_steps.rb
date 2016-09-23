@@ -101,7 +101,7 @@ end
 
 Then /^the "(.*?)" checkbox(?: within (.*))? should not be checked$/ do |label, locator|
   within_locator(locator) do
-    find_field(label)["checked"].should be_false
+    find_field(label)["checked"].should == false
   end
 end
 

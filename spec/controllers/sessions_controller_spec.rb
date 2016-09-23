@@ -31,7 +31,7 @@ describe SessionsController do
         end
 
         it "should not set the session" do
-          session.include?(:user).should be_false
+          session.include?(:user).should == false
         end
       end
       
@@ -47,7 +47,7 @@ describe SessionsController do
       end
 
       it "should not set the session" do
-        session.include?(:user).should be_false
+        session.include?(:user).should == false
       end
     end
   end
@@ -60,7 +60,7 @@ describe SessionsController do
       end
 
       it "should destroy the session" do
-        session.include?(:user).should be_false
+        session.include?(:user).should == false
       end
 
       it "should redirect to the home page" do
@@ -73,7 +73,7 @@ describe SessionsController do
       end
 
       it "should destroy the session" do
-        session.include?(:user).should be_false
+        session.include?(:user).should == false
       end
 
       it "should redirect to the home page" do
