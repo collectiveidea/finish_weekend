@@ -13,14 +13,13 @@ group :assets do
 end
 
 gem "jquery-rails"
-gem "stripe", "~> 1.6.2"
+gem "stripe"
 gem "gravtastic"
 gem "figaro"
-gem "heroku"
 gem "honeybadger"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "carrierwave"
-gem "fog"
+gem "fog-aws"
 gem "RedCloth"
 gem "sendgrid"
 
@@ -31,6 +30,7 @@ group :development, :test do
   gem "factory_girl_rails", "~> 1.7"
   gem "faker", "~> 1.0"
   gem "pry", "~> 0.9"
+  gem "test-unit"
   gem "rspec-rails", "~> 2.8"
   gem "timecop", "~> 0.3"
   gem "guard-rspec"
