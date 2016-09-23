@@ -95,7 +95,7 @@ end
 
 Then /^the "(.*?)" checkbox(?: within (.+))? should be checked$/ do |label, locator|
   within_locator(locator) do
-    find_field(label)["checked"].should be_true
+    find_field(label)["checked"].should == true
   end
 end
 

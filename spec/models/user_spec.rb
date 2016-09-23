@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
   it "should create a valid user object" do
     user = FactoryGirl.build(:user)
-    user.save.should be_true
+    user.save.should == true
   end
 
   context "username" do
