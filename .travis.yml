@@ -11,7 +11,7 @@ before_script:
 - cp config/application.example.yml config/application.yml
 - cp config/database.example.yml config/database.yml
 - bundle exec rake db:create:all db:schema:load
-script: xvfb-run bundle exec rake
+script: xvfb-run bundle exec rake spec && xvfb-run bundle exec cucumber --tags ~@payment
 notifications:
   webhooks:
     urls:
