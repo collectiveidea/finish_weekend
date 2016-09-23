@@ -13,7 +13,7 @@ group :assets do
 end
 
 gem "jquery-rails"
-gem "stripe", "~> 1.6.2"
+gem "stripe"
 gem "gravtastic"
 gem "figaro"
 gem "honeybadger"
