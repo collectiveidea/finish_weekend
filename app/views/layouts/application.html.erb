@@ -8,11 +8,11 @@
   <%= content_for :javascripts %>
   <%= csrf_meta_tags %>
   <%= content_for :meta %>
-  
+
   <!--[if IE]>
   <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  
+
   <% if Rails.env.production? %>
   <script>
     var _gauges = _gauges || [];
@@ -37,7 +37,7 @@
       <h1>Finish Weekend</h1>
       <h2>This is your time to commit to launching something.<br>Bring a project, and get ready to ship it!.</h2>
     </header>
-    
+
     <section id="events">
       <div id="inner"></div>
       <div id="stationary">
@@ -47,22 +47,28 @@
           <a id="next">next finishweekend event</a>
         </div>
       </div>
-        
+
       <article id="event">
-        <div id="location">
-          <%= image_tag @current_event.image.url, width: 280, height: 123 if @current_event.image? %>
-          <a id="register" href="<%= new_event_registration_path @current_event %>"><h1>Register</h1></a>
-        </div>
-        <div id="info">
-          <h1 id="city"><%= @current_event.name %></h1>
-          <h2 id="state"><%= @current_event.state %></h2>
-          <h1 id="date"><%= @current_event.starts_at.strftime "%B %d" %>–<%= @current_event.ends_at.strftime "%d" %></h1>
-          <h2 id="address"><%= @current_event.address %></h2>
-        </div>            
+        <%- if @current_event.ends_at.past? -%>
+          <div id="info">
+            <h1>Stay Tuned!</h1>
+            <h2>After a break, we have new dates in the works. Watch this space!</h2>
+        <%- else -%>
+          <div id="location">
+            <%= image_tag @current_event.image.url, width: 280, height: 123 if @current_event.image? %>
+            <a id="register" href="<%= new_event_registration_path @current_event %>"><h1>Register</h1></a>
+          </div>
+          <div id="info">
+            <h1 id="city"><%= @current_event.name %></h1>
+            <h2 id="state"><%= @current_event.state %></h2>
+            <h1 id="date"><%= @current_event.starts_at.strftime "%B %d" %>–<%= @current_event.ends_at.strftime "%d" %></h1>
+            <h2 id="address"><%= @current_event.address %></h2>
+          </div>
+        <%- end -%>
       </article>
 
     </section><!-- #events -->
-    
+
     <section id="navigation">
       <nav>
         <h1 id="title"><%= link_to "Finish Weekend", root_path %></h1>
@@ -90,7 +96,7 @@
   </section><!-- #main-content -->
 
   <footer>
-  <small>© 2011–2012. Brought to you by <a href="http://collectiveidea.com">Collective Idea</a>. Questions? Get in touch with us at <a href="mailto:finishweekend@collectiveidea.com">finishweekend@collectiveidea.com</a>.</small>
+  <small>© 2011–<%= Date.current.year %>. Brought to you by <a href="http://collectiveidea.com">Collective Idea</a>. Questions? Get in touch with us at <a href="mailto:finishweekend@collectiveidea.com">finishweekend@collectiveidea.com</a>.</small>
   </footer>
 </body>
 </html>

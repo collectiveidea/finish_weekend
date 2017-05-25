@@ -8,11 +8,11 @@
   <%= content_for :javascripts %>
   <%= csrf_meta_tags %>
   <%= content_for :meta %>
-  
+
   <!--[if IE]>
   <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-  
+
   <link href='https://fonts.googleapis.com/css?family=Convergence|Patua+One' rel='stylesheet' type='text/css'>
 </head>
 <body class="management">
@@ -25,7 +25,7 @@
       </div>
     </div>
   </header>
-  
+
   <section class="container wrapper">
     <section id="flash">
       <% if flash[:notice] %>
@@ -39,7 +39,7 @@
       <%= yield %>
     </section>
     <footer>
-      © 2011 – 2012 Collective Idea
+      © 2011–<%= Date.current.year %> Collective Idea
     </footer>
   </section>
 </body>

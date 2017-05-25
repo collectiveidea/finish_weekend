@@ -5,8 +5,12 @@ class RegistrationsController < ApplicationController
   before_filter :load_event
 
   def new
-    @registration = @event.registrations.build
-    respond_with @registration
+    if @event.ends_at.past?
+      render :registration_closed
+    else
+      @registration = @event.registrations.build
+      respond_with @registration
+    end
   end
 
   def create
