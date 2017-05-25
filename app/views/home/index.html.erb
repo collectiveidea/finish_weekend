@@ -13,10 +13,11 @@
     <h3 class="sub-section-title">Suggested Projects</h3>
     <p>Something that can be released in a weekend. Not a final version, but something to get it in front of people. Maybe you've been coding up a killer app, but need help building a website to announce it. Maybe you have a nasty bug you need help with. Maybe you need some copy written. Maybe you just need a few hours of encouragement. We'll get your project polished up and ready to go.<br>Bring a project, and get ready to ship it!</p>
   </div>
-        
+
   <div class="clearfix"></div>
 </article><!-- #article -->
 
+<% unless @current_event.ends_at.past? %>
 <article class="event">
   <header>
     <h2>Coming to</h2>
@@ -26,12 +27,14 @@
   <div class='partners'>
     <a href='http://collectiveidea.com'><%= image_tag "collectiveidea.png", height: 100, class: 'partner' %></a>
     <% if @current_event.sponsors.partner.present? %>
-      <span class='plus'>+</span> 
+      <span class='plus'>+</span>
       <a href='<%= @current_event.sponsors.partner.url %>'><%= image_tag @current_event.sponsors.partner.image.url, height: 100, class: 'partner' %></a>
     <% end %>
   </div>
 </article>
-<%= render 'shared/sponsors', event: @current_event %>    
+<% end %>
+
+<%= render 'shared/sponsors', event: @current_event %>
 <%= render 'shared/people', event: @current_event %>
 <%= render 'shared/schedule', event: @current_event %>
 <%= render 'shared/upcoming', events: @upcoming %>

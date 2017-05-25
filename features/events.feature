@@ -19,7 +19,8 @@ Feature: events
   Scenario: last event scheduled is still on the home page
     Given it is "December 30, 2012"
     And I am on the homepage
-    Then I should see "Finish Weekend Future"
+    Then I should not see "Finish Weekend Future"
+    And I should see "Stay Tuned"
 
   Scenario: list of events
     Given it is "January 1, 2012"
