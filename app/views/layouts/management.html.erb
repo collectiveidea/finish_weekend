@@ -45,7 +45,7 @@
       <% @events.each do |event| %>
         <li class="<%= "active" if @event.slug == event.slug %>">
         <%= link_to event.name, manage_event_path(event) %>
-        </li> 
+        </li>
       <% end %>
     </ul>
     </aside>
@@ -53,7 +53,7 @@
     <%= yield %>
     </section>
     <footer>
-    © 2011 – 2012 Collective Idea
+    © 2011–<%= Date.current.year %> Collective Idea
     </footer>
     </section>
   </body>
